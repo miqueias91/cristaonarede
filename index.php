@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="h-100">
+<html lang="pt-br" class="h-100">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +40,7 @@
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">CRISTÃO NA REDE</a>
+          <a class="navbar-brand" href="./">CRISTÃO NA REDE</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -54,14 +54,14 @@
                   Bíblia Sagrada
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Bíblia Almeida</a></li>
-                  <li><a class="dropdown-item" href="#">Bíblia ACF</a></li>
-                  <li><a class="dropdown-item" href="#">Bíblia ARC</a></li>
-                  <li><a class="dropdown-item" href="#">Bíblia KLV EN</a></li>
-                  <li><a class="dropdown-item" href="#">Bíblia KLV PT</a></li>
-                  <li><a class="dropdown-item" href="#">Bíblia NTLH</a></li>
-                  <li><a class="dropdown-item" href="#">Bíblia NVI</a></li>
-                  <li><a class="dropdown-item" href="#">Bíblia Viva</a></li>
+                  <li><a class="dropdown-item biblia" href="#" versao="aa">Bíblia Almeida</a></li>
+                  <li><a class="dropdown-item biblia" href="#" versao="acf">Bíblia ACF</a></li>
+                  <li><a class="dropdown-item biblia" href="#" versao="arc">Bíblia ARC</a></li>
+                  <li><a class="dropdown-item biblia" href="#" versao="en_kjv">Bíblia KJV EN</a></li>
+                  <li><a class="dropdown-item biblia" href="#" versao="pt_kjv">Bíblia KJV PT</a></li>
+                  <li><a class="dropdown-item biblia" href="#" versao="ntlh">Bíblia NTLH</a></li>
+                  <li><a class="dropdown-item biblia" href="#" versao="nvi">Bíblia NVI</a></li>
+                  <li><a class="dropdown-item biblia" href="#" versao="viva">Bíblia Viva</a></li>
                 </ul>
               </li>
               <li class="nav-item">
@@ -114,6 +114,14 @@
     </footer>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/jquery-3.5.1.min.js"></script>  
-    <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>      
+    <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $( ".biblia" ).click(function() {
+          var versao = $(this).attr('versao');
+          location.href = "./biblia-sagrada.php?versao="+versao;
+        });
+      });
+    </script>
   </body>
 </html>
