@@ -1,4 +1,20 @@
-<!doctype html>
+<?php
+include_once './class/class.Biblia.php';
+
+$versao = !empty($_GET['versao']) ? $_GET['versao'] : 'nvi';
+$conteudo = !empty($_GET['conteudo']) ? $_GET['conteudo'] : 'Gn||Gênesis||50';
+$capitulo = !empty($capitulo) ? $capitulo : 1;
+
+$b = new Biblia();
+$dados = explode("||", $conteudo);
+
+$livro = $dados[0];
+$nome = $dados[1];
+$ultimoCap = $dados[2];
+
+$textoCapitulo = $b->buscaTexto($versao, $livro, $capitulo, $nome);
+print_r($textoCapitulo);
+?>
 <html lang="pt-br" class="h-100">
   <head>
     <meta charset="utf-8">
@@ -36,7 +52,7 @@
     <!-- Custom styles for this template -->
   </head>
   <body class="d-flex flex-column h-100">
-     <header>
+    <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
@@ -82,29 +98,18 @@
 
     <!-- Begin page content -->
     <main class="flex-shrink-0">
+
       <section class="container">
-        <h1 class="mt-5">Sticky footer with fixed navbar</h1>
-        <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
-        <p>Back to <a href="../examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p>
+        <h1 class="mt-5 text-center">Bíblia <?=strtoupper($versao)?></h1>
       </section>
 
       <section class="container">
-        <h1 class="mt-5">Sticky footer with fixed navbar</h1>
-        <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
-        <p>Back to <a href="../examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p>
+        <div class="row">
+    
+        </div>
       </section>
 
-      <section class="container">
-        <h1 class="mt-5">Sticky footer with fixed navbar</h1>
-        <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
-        <p>Back to <a href="../examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p>
-      </section>
 
-      <section class="container">
-        <h1 class="mt-5">Sticky footer with fixed navbar</h1>
-        <p class="lead">Pin a footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code class="small">padding-top: 60px;</code> on the <code class="small">main &gt; .container</code>.</p>
-        <p>Back to <a href="../examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p>
-      </section>
     </main>
 
     <footer class="footer mt-auto py-3 bg-light">
@@ -117,7 +122,35 @@
     <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <script type="text/javascript">
       $(function() {
-        
+
+
+
+        $( ".conteudo-biblia" ).click(function() {
+          var conteudo = $(this).attr('conteudo');
+          console.log(conteudo);
+          console.log('<?=$versao?>');
+          ///var dados = this.data.title.split('||'); 
+
+          //var ultimoCap = dados[2];
+          //app.registraAcesso('ntlh/textoLivro.html?livro='+dados[0]+'&cap='+dados[3]);
+          //var versaoId = window.localStorage.getItem('versao-biblia');
+
+          //app.buscaTexto(versaoId,dados[0],dados[3], dados[1]);
+
+          
+
+          /*$.ajax({
+            method: "GET",
+            url: "biblia-sagrada/"+versao+".json"
+          })
+          .done(function(msg) {
+            console.log(msg);
+          });*/
+
+          $( "#dialog" ).dialog({
+            modal: true
+          });
+        });
       });
     </script>
   </body>
