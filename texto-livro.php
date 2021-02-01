@@ -12,8 +12,8 @@ $livro = $dados[0];
 $nome = $dados[1];
 $ultimoCap = $dados[2];
 
-$textoCapitulo = $b->buscaTexto($versao, $livro, $capitulo, $nome);
-print_r($textoCapitulo);
+//$textoCapitulo = $b->buscaTexto($versao, $livro, $capitulo, $nome);
+//print_r($textoCapitulo);die;
 ?>
 <html lang="pt-br" class="h-100">
   <head>
@@ -100,13 +100,11 @@ print_r($textoCapitulo);
     <main class="flex-shrink-0">
 
       <section class="container">
-        <h1 class="mt-5 text-center">Bíblia <?=strtoupper($versao)?></h1>
+        <h1 class="mt-5 text-center"><span id="texto-livro-capitulo"></span></h1>
       </section>
 
       <section class="container">
-        <div class="row">
-    
-        </div>
+        <div class="row" id="texto-livro"></div>
       </section>
 
 
@@ -121,8 +119,53 @@ print_r($textoCapitulo);
     <script src="./js/jquery-3.5.1.min.js"></script>  
     <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <script type="text/javascript">
-      $(function() {
 
+      function buscaTexto(versaoId,livro,capitulo, nome) {
+        var versaoId = versaoId || "nvi";
+        var selector = this;
+        var texts = [];
+        $.ajax({
+          type : "GET",
+          url : "biblia-sagrada/"+versaoId+".json",
+          dataType : "json",
+          success : function(data){
+            $(selector).each(function(){
+              var ref = livro+""+capitulo+".1-200";
+              var reg = new RegExp('([0-9]?[a-zA-Záàâãéèêíïó]{2,3})([0-9]+)[\.|:]([0-9]+)-?([0-9]{1,3})?');
+              var regex = reg.exec(ref);                    
+              var myBook = null;
+              var obj = {
+                ref : ref,
+                book : regex[1].toLowerCase(),
+                chapter : parseInt(regex[2]),
+                text : ""
+              };
+
+              for(i in data){
+                if(data[i].abbrev == obj.book){
+                    myBook = data[i];
+                }
+              }
+              for (var i in myBook.chapters[obj.chapter - 1]) {
+                if (myBook.chapters[obj.chapter - 1]) {
+                  var texto = myBook.chapters[obj.chapter - 1][i];
+                  obj.text += 
+                    '<div id="txt_versiculo'+livro+'_'+capitulo+'_'+i+'_">'+
+                      '<p style="text-align:justify;"  id="txt_versiculo'+livro+'_'+capitulo+'_'+i+'" class="txt_versiculo" livro="'+livro+'" num_capitulo="'+capitulo+'" num_versiculo="'+i+'">'+
+                        '<span style="font-weight:bold;">'+(parseInt(i)+1)+'</span>'+
+                        '&nbsp;&nbsp;'+texto+ 
+                      '</p>'+
+                    '</div>';
+                }
+                $("#texto-livro-capitulo").html(nome+" "+capitulo+' - Bíblia <?=strtoupper($versao)?>');
+                $("#texto-livro").html(obj.text)
+              }
+            });
+          }
+        });
+      }
+      $(function() {
+        buscaTexto('<?=$versao?>','<?=$livro?>','<?=$capitulo?>', '<?=$nome?>');
 
 
         $( ".conteudo-biblia" ).click(function() {
