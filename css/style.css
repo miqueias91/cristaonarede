@@ -1,13 +1,42 @@
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
-      }
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+@media (min-width: 768px) {
+  .bd-placeholder-img-lg {
+    font-size: 3.5rem;
+  }
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #212529;
+  border-color: #212529;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.btn-primary:active {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.btn-primary:active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+.btn-primary:focus {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+    box-shadow: none;
+}

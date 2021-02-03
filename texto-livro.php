@@ -64,6 +64,12 @@ $ultimoCap = $dados[2];
 
       <section class="container">
         <div class="row" id="texto-livro"></div>
+        <div class="row">
+          <div class="col-md-6">
+            <button class="btn btn-outline-success" type="submit">Anterior</button>
+            <button class="btn btn-primary" type="submit">Próximo</button>
+          </div>
+        </div>
       </section>
 
 
