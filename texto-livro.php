@@ -66,8 +66,8 @@ $ultimoCap = $dados[2];
         <div class="row" id="texto-livro"></div>
         <div class="row">
           <div class="col-md-6">
-            <button class="btn btn-outline-success" type="submit">Anterior</button>
-            <button class="btn btn-primary" type="submit">Próximo</button>
+            <button id="ant-texto-livro" class="btn btn-outline-success" type="submit">Anterior</button>
+            <button id="pro-texto-livro" class="btn btn-primary" type="submit">Próximo</button>
           </div>
         </div>
       </section>
@@ -81,6 +81,13 @@ $ultimoCap = $dados[2];
     <script src="./js/jquery-3.5.1.min.js"></script>  
     <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <script type="text/javascript">
+
+      var versao = '<?=$versao?>';
+      var conteudo = '<?=$conteudo?>';
+      var capitulo = parseInt('<?=$capitulo?>');
+      var livro = '<?=$livro?>';
+      var nome = '<?=$nome?>';
+      var ultimoCap = parseInt('<?=$ultimoCap?>');
 
       function buscaTexto(versaoId,livro,capitulo, nome) {
         var versaoId = versaoId || "nvi";
@@ -127,34 +134,42 @@ $ultimoCap = $dados[2];
         });
       }
       $(function() {
-        buscaTexto('<?=$versao?>','<?=$livro?>','<?=$capitulo?>', '<?=$nome?>');
+        buscaTexto(versao, livro, capitulo, nome);
+
+        $( "#ant-texto-livro" ).click(function() {
+          if (capitulo <= 0) {
+            capitulo = 1;
+          }
+          else {
+            capitulo--;
+          }
+
+          if (capitulo > 0) {
+            buscaTexto(versao, livro, capitulo, nome);
+          }
+        });
 
 
-        $( ".conteudo-biblia" ).click(function() {
-          var conteudo = $(this).attr('conteudo');
-          console.log(conteudo);
-          console.log('<?=$versao?>');
-          ///var dados = this.data.title.split('||'); 
 
-          //var ultimoCap = dados[2];
-          //app.registraAcesso('ntlh/textoLivro.html?livro='+dados[0]+'&cap='+dados[3]);
-          //var versaoId = window.localStorage.getItem('versao-biblia');
+        $( "#pro-texto-livro" ).click(function() {
+          if (capitulo <= 0) {
+            capitulo = 2;
+          }
+          else if (capitulo > ultimoCap) {
+            capitulo = ultimoCap;
+          }
+          else {
+            capitulo++;
+          }
+          console.log(capitulo)
 
-          //app.buscaTexto(versaoId,dados[0],dados[3], dados[1]);
+          if (capitulo <= ultimoCap) {
+            buscaTexto(versao, livro, capitulo, nome);
+          }
 
-          
-
-          /*$.ajax({
-            method: "GET",
-            url: "biblia-sagrada/"+versao+".json"
-          })
-          .done(function(msg) {
-            console.log(msg);
-          });*/
-
-          $( "#dialog" ).dialog({
-            modal: true
-          });
+          if (capitulo > ultimoCap) {
+            capitulo = ultimoCap;
+          }
         });
       });
     </script>
