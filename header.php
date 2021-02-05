@@ -13,7 +13,7 @@
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Bíblia Sagrada
+                  Versões da Bíblia Sagrada
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item biblia" href="./biblia-sagrada.php?versao=aa" versao="aa">Bíblia Almeida</a></li>
@@ -27,7 +27,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./mensagem.php">Mensagem</a>
+                <a class="nav-link" href="./harpa-crista.php">Harpa Cristã</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./quiz-da-biblia.php">Quiz da Bíblia</a>
