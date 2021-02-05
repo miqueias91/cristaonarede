@@ -2,18 +2,15 @@
 include_once './class/class.Biblia.php';
 
 $versao = !empty($_GET['versao']) ? $_GET['versao'] : 'nvi';
-$conteudo = !empty($_GET['conteudo']) ? $_GET['conteudo'] : 'Gn||Gênesis||50';
-$capitulo = !empty($capitulo) ? $capitulo : 1;
+$abrev = !empty($_GET['abrev']) ? $_GET['abrev'] : 'Gn';
+$livro = !empty($_GET['livro']) ? $_GET['livro'] : 'Gênesis';
+$ultimocap = !empty($_GET['cap']) ? $_GET['cap'] : '50';
+$capatual = !empty($capatual) ? $capatual : 1;
 
 $b = new Biblia();
-$dados = explode("||", $conteudo);
 
-$livro = $dados[0];
-$nome = $dados[1];
-$ultimoCap = $dados[2];
 
-//$textoCapitulo = $b->buscaTexto($versao, $livro, $capitulo, $nome);
-//print_r($textoCapitulo);die;
+// echo "<pre>";print_r($_GET);die;
 ?>
 <html lang="pt-br" class="h-100">
   <head>
@@ -83,13 +80,12 @@ $ultimoCap = $dados[2];
     <script type="text/javascript">
 
       var versao = '<?=$versao?>';
-      var conteudo = '<?=$conteudo?>';
-      var capitulo = parseInt('<?=$capitulo?>');
+      var abrev = '<?=$abrev?>';
       var livro = '<?=$livro?>';
-      var nome = '<?=$nome?>';
-      var ultimoCap = parseInt('<?=$ultimoCap?>');
+      var capatual = parseInt('<?=$capatual?>');
+      var ultimocap = parseInt('<?=$ultimocap?>');
 
-      function buscaTexto(versaoId,livro,capitulo, nome) {
+      function buscaTexto(versaoId,abrev,capatual, livro) {
         var versaoId = versaoId || "nvi";
         var selector = this;
         var texts = [];
@@ -99,7 +95,7 @@ $ultimoCap = $dados[2];
           dataType : "json",
           success : function(data){
             $(selector).each(function(){
-              var ref = livro+""+capitulo+".1-200";
+              var ref = abrev+""+capatual+".1-200";
               var reg = new RegExp('([0-9]?[a-zA-Záàâãéèêíïó]{2,3})([0-9]+)[\.|:]([0-9]+)-?([0-9]{1,3})?');
               var regex = reg.exec(ref);                    
               var myBook = null;
@@ -119,14 +115,14 @@ $ultimoCap = $dados[2];
                 if (myBook.chapters[obj.chapter - 1]) {
                   var texto = myBook.chapters[obj.chapter - 1][i];
                   obj.text += 
-                    '<div id="txt_versiculo'+livro+'_'+capitulo+'_'+i+'_">'+
-                      '<p style="text-align:justify;"  id="txt_versiculo'+livro+'_'+capitulo+'_'+i+'" class="txt_versiculo" livro="'+livro+'" num_capitulo="'+capitulo+'" num_versiculo="'+i+'">'+
+                    '<div id="txt_versiculo'+abrev+'_'+capatual+'_'+i+'_">'+
+                      '<p style="text-align:justify;"  id="txt_versiculo'+abrev+'_'+capatual+'_'+i+'" class="txt_versiculo" abrev="'+abrev+'" num_capitulo="'+capatual+'" num_versiculo="'+i+'">'+
                         '<span style="font-weight:bold;">'+(parseInt(i)+1)+'</span>'+
                         '&nbsp;&nbsp;'+texto+ 
                       '</p>'+
                     '</div>';
                 }
-                $("#texto-livro-capitulo").html(nome+" "+capitulo+' - Bíblia <?=strtoupper($versao)?>');
+                $("#texto-livro-capitulo").html(livro+" "+capatual+' - Bíblia <?=strtoupper($versao)?>');
                 $("#texto-livro").html(obj.text)
               }
             });
@@ -134,41 +130,38 @@ $ultimoCap = $dados[2];
         });
       }
       $(function() {
-        buscaTexto(versao, livro, capitulo, nome);
+        buscaTexto(versao, abrev, capatual, livro);
 
         $( "#ant-texto-livro" ).click(function() {
-          if (capitulo <= 0) {
-            capitulo = 1;
+          if (capatual <= 0) {
+            capatual = 1;
           }
           else {
-            capitulo--;
+            capatual--;
           }
 
-          if (capitulo > 0) {
-            buscaTexto(versao, livro, capitulo, nome);
+          if (capatual > 0) {
+            buscaTexto(versao, abrev, capatual, livro);
           }
         });
 
-
-
         $( "#pro-texto-livro" ).click(function() {
-          if (capitulo <= 0) {
-            capitulo = 2;
+          if (capatual <= 0) {
+            capatual = 2;
           }
-          else if (capitulo > ultimoCap) {
-            capitulo = ultimoCap;
+          else if (capatual > ultimocap) {
+            capatual = ultimocap;
           }
           else {
-            capitulo++;
-          }
-          console.log(capitulo)
-
-          if (capitulo <= ultimoCap) {
-            buscaTexto(versao, livro, capitulo, nome);
+            capatual++;
           }
 
-          if (capitulo > ultimoCap) {
-            capitulo = ultimoCap;
+          if (capatual <= ultimocap) {
+            buscaTexto(versao, abrev, capatual, livro);
+          }
+
+          if (capatual > ultimocap) {
+            capatual = ultimocap;
           }
         });
       });

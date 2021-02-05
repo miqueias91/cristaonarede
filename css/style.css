@@ -40,3 +40,26 @@
     border-color: #212529;
     box-shadow: none;
 }
+
+.btn-outline-success:hover {
+    color: #198754;
+    background-color: #fff;
+    border-color: #198754;
+}
+
+.btn-outline-success:active {
+    color: #198754;
+    background-color: #fff;
+    border-color: #198754;
+}
+
+.btn-outline-success:active:focus, .show > .btn-outline-success.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+.btn-outline-success:focus {
+    color: #198754;
+    background-color: #fff;
+    border-color: #198754;
+    box-shadow: none;
+}
