@@ -1,5 +1,6 @@
 <?php 
-$id = $id && is_numeric($id) ? $id : 1;
+$id = $_GET['id'] && is_numeric($_GET['id']) ? $_GET['id'] : 1;
+$titulo = $_GET['titulo'] ? $_GET['titulo'] : 'CHUVAS DE GRAÇA';
 ?>
 <!doctype html>
 <html lang="pt-br" class="h-100">
@@ -44,6 +45,10 @@ $id = $id && is_numeric($id) ? $id : 1;
     <!-- Begin page content -->
     <main class="flex-shrink-0">
       <section class="container">
+        <h1 class="mt-5 text-center"><?=$id.' - '.strtoupper($titulo)?></h1>
+      </section>
+
+      <section class="container">
         <div class="col-md" id="conteudoHarpa">
           <br><br>
         </div>
@@ -82,7 +87,16 @@ $id = $id && is_numeric($id) ? $id : 1;
                 } 
                 for (var i = 0; i < myBook['hinario'].length; i++) {
                   texto = myBook['hinario'][i];
-                  obj.text += '<p class="lead">'+texto+'</p>';
+
+                  if (texto.indexOf("*") != -1) {
+                    obj.text += '<p class="lead"><b>'+texto+'</b></p>';
+                  }
+                  else{
+                    obj.text += '<p class="lead">'+texto+'</p>';
+                  }
+
+
+                  //console.log(texto.indexOf("*") != -1);
                 }
               }
               $("#conteudoHarpa").html('<br><br>'+obj.text);
