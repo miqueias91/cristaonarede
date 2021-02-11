@@ -96,7 +96,7 @@
             $("#listaharpa").html('<br><br>'+text);
           }
         };
-        xmlhttp.open("GET", "js/harpa.json", true);
+        xmlhttp.open("GET", "./harpa-crista/harpa.json", true);
         xmlhttp.send();
       }
       $(function() {
