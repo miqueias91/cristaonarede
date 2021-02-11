@@ -1,6 +1,5 @@
 <?php 
 $id = $_GET['id'] && is_numeric($_GET['id']) ? $_GET['id'] : 1;
-$titulo = $_GET['titulo'] ? $_GET['titulo'] : 'CHUVAS DE GRAÇA';
 ?>
 <!doctype html>
 <html lang="pt-br" class="h-100">
@@ -45,14 +44,22 @@ $titulo = $_GET['titulo'] ? $_GET['titulo'] : 'CHUVAS DE GRAÇA';
     <!-- Begin page content -->
     <main class="flex-shrink-0">
       <section class="container">
-        <h1 class="mt-5 text-center"><?=$id.' - '.strtoupper($titulo)?></h1>
+        <h1 class="mt-5 text-center" id="titulo-harpa"></h1>
       </section>
 
       <section class="container">
         <div class="col-md" id="conteudoHarpa">
           <br><br>
+          <center>
+            <img src='./img/carregando1.gif'>
+          </center>
         </div>
-      </section>
+        <div class="row" id="botoes" style="display: none;">
+          <div class="col-md-6">
+            <button id="ant-texto-livro" class="btn btn-outline-success" type="submit">Anterior</button>
+            <button id="pro-texto-livro" class="btn btn-primary" type="submit">Próximo</button>
+          </div>
+        </div>
     </main>
 
     <?php include_once './footer.php'; ?>
@@ -62,14 +69,19 @@ $titulo = $_GET['titulo'] ? $_GET['titulo'] : 'CHUVAS DE GRAÇA';
     <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <script type="text/javascript">
       var id = '<?=$id?>';
-
+      var ultimo = 640;
+      var atual = id;
       function buscaHinario(id) {
+        $("#conteudoHarpa").html("<br><br><center><img src='./img/carregando1.gif'></center>");
+        $("#botoes").hide();
+
         var selector = this;
         var texto = "";
+        var titulo = "";
 
         $.ajax({
           type : "GET",
-          url : "js/harpa.json",
+          url : "harpa-crista/harpa.json",
           dataType : "json",
           success : function(data){
             $(selector).each(function(){
@@ -85,6 +97,9 @@ $titulo = $_GET['titulo'] ? $_GET['titulo'] : 'CHUVAS DE GRAÇA';
                       myBook = data[i];
                   }
                 } 
+                
+                titulo = myBook['titulo'];
+                id = myBook['id'];
                 for (var i = 0; i < myBook['hinario'].length; i++) {
                   texto = myBook['hinario'][i];
 
@@ -94,18 +109,50 @@ $titulo = $_GET['titulo'] ? $_GET['titulo'] : 'CHUVAS DE GRAÇA';
                   else{
                     obj.text += '<p class="lead">'+texto+'</p>';
                   }
-
-
-                  //console.log(texto.indexOf("*") != -1);
                 }
               }
-              $("#conteudoHarpa").html('<br><br>'+obj.text);
+              $("#titulo-harpa").html(id+' - '+titulo);
+              $("#conteudoHarpa").html(''+obj.text);
+              $("#botoes").fadeIn();
             });
           }
         });
       }
       $(function() {
         buscaHinario(id);
+
+        $( "#ant-texto-livro" ).click(function() {
+          if (atual <= 0) {
+            atual = 1;
+          }
+          else {
+            atual--;
+          }
+
+          if (atual > 0) {
+            buscaHinario(atual);
+          }
+        });
+
+        $( "#pro-texto-livro" ).click(function() {
+          if (atual <= 0) {
+            atual = 2;
+          }
+          else if (atual > ultimo) {
+            atual = ultimo;
+          }
+          else {
+            atual++;
+          }
+
+          if (atual <= ultimo) {
+            buscaHinario(atual);
+          }
+
+          if (atual > ultimo) {
+            atual = ultimo;
+          }
+        });
       });
     </script>
   </body>

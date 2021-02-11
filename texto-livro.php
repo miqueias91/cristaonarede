@@ -60,8 +60,12 @@ $b = new Biblia();
       </section>
 
       <section class="container">
-        <div class="row" id="texto-livro"></div>
-        <div class="row">
+        <div class="row" id="texto-livro">
+          <center>
+            <img src="./img/carregando1.gif">
+          </center>
+        </div>
+        <div class="row" id="botoes" style="display: none;">
           <div class="col-md-6">
             <button id="ant-texto-livro" class="btn btn-outline-success" type="submit">Anterior</button>
             <button id="pro-texto-livro" class="btn btn-primary" type="submit">Próximo</button>
@@ -86,6 +90,9 @@ $b = new Biblia();
       var ultimocap = parseInt('<?=$ultimocap?>');
 
       function buscaTexto(versaoId,abrev,capatual, livro) {
+        $("#texto-livro").html("<br><br><center><img src='./img/carregando1.gif'></center>");
+        $("#botoes").hide();
+        
         var versaoId = versaoId || "nvi";
         var selector = this;
         var texts = [];
@@ -123,8 +130,9 @@ $b = new Biblia();
                     '</div>';
                 }
                 $("#texto-livro-capitulo").html(livro+" "+capatual+' - Bíblia <?=strtoupper($versao)?>');
-                $("#texto-livro").html(obj.text)
+                $("#texto-livro").html(obj.text);
               }
+              $("#botoes").fadeIn();
             });
           }
         });

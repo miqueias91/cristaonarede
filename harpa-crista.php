@@ -91,7 +91,7 @@
             $("#listaharpa").html('');
             var data = JSON.parse(this.responseText);
             data.forEach(function (hinos) {
-              text +='<p><a class="conteudo-harpa lead" href="./texto-harpa.php?id='+hinos['id']+'&titulo='+hinos['titulo']+'">'+hinos['id']+' - '+hinos['titulo']+'</a></p>'
+              text +='<p><a class="conteudo-harpa lead" href="./texto-harpa.php?id='+hinos['id']+'">'+hinos['id']+' - '+hinos['titulo']+'</a></p>'
             });
             $("#listaharpa").html('<br><br>'+text);
           }
