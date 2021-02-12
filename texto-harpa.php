@@ -155,5 +155,15 @@ $id = $_GET['id'] && is_numeric($_GET['id']) ? $_GET['id'] : 1;
         });
       });
     </script>
+    <!-- Anuncio1 -->
+    <ins class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-7091486462236476"
+    data-ad-slot="5148404228"
+    data-ad-format="auto"
+    data-full-width-responsive="true"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </body>
 </html>
