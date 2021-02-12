@@ -279,16 +279,6 @@ $mensagem = $mensagem[0];
       </section>
     </main>
 
-    <?php include_once './footer.php'; ?>
-
-    <script src="./js/bootstrap.bundle.min.js"></script>
-    <script src="./js/jquery-3.5.1.min.js"></script>  
-    <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script type="text/javascript">
-      $(function() {
-        
-      });
-    </script>
     <!-- Anuncio1 -->
     <ins class="adsbygoogle"
     style="display:block"
@@ -298,6 +288,16 @@ $mensagem = $mensagem[0];
     data-full-width-responsive="true"></ins>
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+    <?php include_once './footer.php'; ?>
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.5.1.min.js"></script>  
+    <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        
+      });
     </script>
   </body>
 </html>
