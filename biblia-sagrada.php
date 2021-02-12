@@ -5,9 +5,9 @@ $versao = $_GET['versao'] ? $_GET['versao'] : 'nvi';
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.79.0">
+    <meta name="description" content="Diversas traduções e versões da Bíblia Sagrada, Quiz da Bíblia, Cifras e Harpa Cristã. Versículos e mensagens bíblicas da palavra de Deus diária para cada ocasião.">
+    <meta name="author" content="Innovate Soft, and Miqueias Matias Caetano">
+    <meta name="generator" content="Innovate Soft">
     <title>Cristão na Rede · Conteúdo cristão de qualidade</title>
     
 
