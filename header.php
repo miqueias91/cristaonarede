@@ -33,7 +33,7 @@
                 <a class="nav-link" href="./quiz-da-biblia.php">Quiz da Bíblia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./quiz-da-biblia.php">Cifras</a>
+                <a class="nav-link" target="_BLANK" href="https://bit.ly/3l9zjYi">App's do Google Play</a>
               </li>
             </ul>
             <form class="d-flex">
