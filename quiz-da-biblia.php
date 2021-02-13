@@ -1,93 +1,5 @@
 <!doctype html>
-<?php 
-include_once "config/config.php";
-include_once "$CLASS_PATH/class.Biblia.php";
 
-$palavraDia = array(
-array('livro' => 'Mt','cap' => '11', 'ver' => '28'),
-array('livro' => 'Jo', 'cap' => '15', 'ver' => '7'),
-array('livro' => 'at', 'cap' => '1', 'ver' => '8'),
-array('livro' => 'Fp', 'cap' => '1', 'ver' => '6'),
-array('livro' => '2Sm', 'cap' => '22', 'ver' => '31'),
-array('livro' => 'Mt', 'cap' => '11', 'ver' => '28'),
-array('livro' => 'Hb', 'cap' => '10', 'ver' => '23'),
-array('livro' => 'Fp', 'cap' => '1', 'ver' => '6'),
-array('livro' => '2Pe', 'cap' => '1', 'ver' => '4'),
-array('livro' => 'Mt', 'cap' => '5', 'ver' => '8'),
-array('livro' => 'Rm', 'cap' => '1', 'ver' => '6'),
-array('livro' => 'Mt', 'cap' => '10', 'ver' => '32'),
-array('livro' => 'Is', 'cap' => '44', 'ver' => '3'),
-array('livro' => 'Jr', 'cap' => '29', 'ver' => '11'),
-array('livro' => 'Fp', 'cap' => '4', 'ver' => '19'),
-array('livro' => 'Ap', 'cap' => '3', 'ver' => '20'),
-array('livro' => 'Ef', 'cap' => '1', 'ver' => '4'),
-array('livro' => 'Ef', 'cap' => '1', 'ver' => '13'),
-array('livro' => 'Mt', 'cap' => '28', 'ver' => '19'),
-array('livro' => 'Jo', 'cap' => '14', 'ver' => '18'),
-array('livro' => 'Jo', 'cap' => '8', 'ver' => '32'),
-array('livro' => 'Mt', 'cap' => '24', 'ver' => '35'),
-array('livro' => 'Sl', 'cap' => '126', 'ver' => '5'),
-array('livro' => 'Jo', 'cap' => '8', 'ver' => '12'),
-array('livro' => 'Jo', 'cap' => '15', 'ver' => '16'),
-array('livro' => 'Hb', 'cap' => '13', 'ver' => '5'),
-array('livro' => 'Tg', 'cap' => '4', 'ver' => '7'),
-array('livro' => 'Mt', 'cap' => '6', 'ver' => '33'),
-array('livro' => 'Jo', 'cap' => '10', 'ver' => '10'),
-array('livro' => 'Jr', 'cap' => '33', 'ver' => '3'),
-array('livro' => 'at', 'cap' => '1', 'ver' => '8'),
-array('livro' => '1Jo', 'cap' => '5', 'ver' => '4'),
-array('livro' => 'Js', 'cap' => '1', 'ver' => '9'),
-array('livro' => 'Js', 'cap' => '1', 'ver' => '9'),
-array('livro' => 'Rm', 'cap' => '8', 'ver' => '1'),
-array('livro' => 'Sl', 'cap' => '31', 'ver' => '24'),
-array('livro' => 'Sl', 'cap' => '91', 'ver' => '1'),
-array('livro' => 'Hb', 'cap' => '12', 'ver' => '1'),
-array('livro' => '2Tm', 'cap' => '4', 'ver' => '7'),
-array('livro' => 'Rm', 'cap' => '12', 'ver' => '21'),
-array('livro' => 'Jo', 'cap' => '14', 'ver' => '18'),
-array('livro' => '1Co', 'cap' => '15', 'ver' => '55'),
-array('livro' => 'Sl', 'cap' => '41', 'ver' => '1'),
-array('livro' => 'Rm', 'cap' => '8', 'ver' => '31'),
-array('livro' => 'Fp', 'cap' => '4', 'ver' => '6'),
-array('livro' => 'Fp', 'cap' => '4', 'ver' => '13'),
-array('livro' => 'Nm', 'cap' => '23', 'ver' => '19'),
-array('livro' => 'Js', 'cap' => '21', 'ver' => '45'),
-array('livro' => 'Js', 'cap' => '23', 'ver' => '14'),
-array('livro' => '1Jo', 'cap' => '2', 'ver' => '25'),
-array('livro' => 'Ez', 'cap' => '36', 'ver' => '26'),
-array('livro' => '1Jo', 'cap' => '1', 'ver' => '9'),
-array('livro' => '1Rs', 'cap' => '8', 'ver' => '56'),
-array('livro' => 'Dt', 'cap' => '28', 'ver' => '9'),
-array('livro' => 'Jl', 'cap' => '2', 'ver' => '32'),
-array('livro' => 'Sl', 'cap' => '145', 'ver' => '13'),
-array('livro' => '2Pe', 'cap' => '1', 'ver' => '4'),
-array('livro' => 'Tg', 'cap' => '1', 'ver' => '12'),
-array('livro' => 'Sl', 'cap' => '138', 'ver' => '4'),
-array('livro' => '2Co', 'cap' => '7', 'ver' => '1'),
-array('livro' => 'Sl', 'cap' => '119', 'ver' => '50'),
-array('livro' => '2Pe', 'cap' => '3', 'ver' => '9'),
-array('livro' => 'Gl', 'cap' => '3', 'ver' => '16'),
-array('livro' => 'Jo', 'cap' => '16', 'ver' => '33'),
-array('livro' => 'Mt', 'cap' => '6', 'ver' => '26'),
-array('livro' => 'Sl', 'cap' => '34', 'ver' => '10'),
-array('livro' => 'Mt', 'cap' => '6', 'ver' => '11'),
-array('livro' => 'Sl', 'cap' => '23', 'ver' => '1'),
-array('livro' => 'Sl', 'cap' => '4', 'ver' => '8'),
-array('livro' => 'Is', 'cap' => '40', 'ver' => '31'),
-array('livro' => 'Jo', 'cap' => '14', 'ver' => '27'),
-array('livro' => 'Lc', 'cap' => '12', 'ver' => '15'),
-array('livro' => 'Dt', 'cap' => '31', 'ver' => '6'),
-array('livro' => 'Hb', 'cap' => '13', 'ver' => '6'),
-array('livro' => 'Rm', 'cap' => '8', 'ver' => '28'),
-array('livro' => 'Tg', 'cap' => '1', 'ver' => '5'),
-array('livro' => 'Sl', 'cap' => '37', 'ver' => '4'),
-array('livro' => 'Mt', 'cap' => '17', 'ver' => '20'),
-array('livro' => 'Is', 'cap' => '41', 'ver' => '10'));
-$palavra = ($palavraDia[mt_rand(0, (count($palavraDia)-1))]);
-$app = new Biblia();
-$mensagem = $app->buscaVersiculo($palavra['livro'], $palavra['cap'], $palavra['ver']);
-$mensagem = $mensagem[0];
-?>
 <html lang="pt-br" class="h-100">
   <head>
     <meta charset="utf-8">
@@ -132,31 +44,17 @@ $mensagem = $mensagem[0];
       <section class="container">
         <h1 class="mt-5">Quiz da Bíblia</h1>
         <div class="row">
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=aa" versao="aa">Nova Almeida Atualizada</a></p>
-          </div>
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=acf" versao="acf">Almeida Corrigida Fiel</a></p>
-          </div>
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=arc" versao="arc">Almeida Revista e Corrigida</a></p>
-          </div>
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=en_kjv" versao="en_kjv">King James Version EN</a></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=ntlh" versao="ntlh">Nova Tradução na Linguagem de Hoje</a></p>
-          </div>
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=nvi" versao="nvi">Nova Versão Internacional</a></p>
-          </div>
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=pt_kjv" versao="pt_kjv">King James Version PT</a></p>
-          </div>
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=viva" versao="viva">Nova Bíblia Viva</a></p>
+          <div class="col-md-12">
+            <br>
+            <div class="row">
+              <div class="col-md-4" style="font-weight: bold;"><span id="acerto">ACERTOS: 0</span></div>
+              <div class="col-md-4" style="font-weight: bold;"><span id="erro">ERROS: 0</span></div>
+              <!--<div class="col-md-4" style="font-weight: bold;"><span id="tempo">00:00:00</span></div>-->
+            </div>
+            
+            
+            
+            <div id="textoquiz"></div>
           </div>
         </div>
       </section>
@@ -172,14 +70,249 @@ $mensagem = $mensagem[0];
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
-    
+
     <?php include_once './footer.php'; ?>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/jquery-3.5.1.min.js"></script>  
     <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <script type="text/javascript">
+      //INICIALIZO VARIAVEIS
+      var timeout = 5000;
+      var num_perg = 0;
+      var acertos = 0;
+      var erros = 0;
+      var pulos = 3;
+      var eliminar = 1;
+
+      function buscaPergunta(num_pergunta) {
+        $("#textoquiz").html('');
+        var selector = this;
+        //BUSCO AS PERGUNTAS
+        var data = JSON.parse(localStorage.getItem('lista-quiz'));
+
+        //VERIFICO SE EXISTE PERGUNTAS
+        if (data) {      
+          $(selector).each(function(){
+            var pergunta = null;
+            var respostas = null;
+            var resposta = null;        
+            var obj = {
+              id : num_pergunta,
+              opcoes : ""
+            };
+            var total_perguntas = 0;
+
+            for(i in data){
+              total_perguntas++
+              //CARREGO A PERGUNTA ATUAL
+              if(i == obj.id){
+                pergunta = data[i]['pergunta'];
+                respostas = data[i]['opcoes'];
+                resposta = data[i]['resposta'];
+                //PASSO A PERGUNTA ATUAL PARA UMA VARIAVEL
+                var perguntaAtual = data[i];
+              }
+            }
+
+            if (pergunta) {            
+              obj.opcoes = '<br><p class="lead"><b>'+(num_pergunta+1)+' - '+pergunta+'</b></p>';
+              for (var i in respostas) {
+                if (respostas[i]) {
+                  obj.opcoes += 
+                  '<div style="font-size: 20px;">'+
+                  " <input type='radio' name='quiz_' class='quiz_' id='quiz"+i+"' value='"+respostas[i]+"'/>"+
+                  ' <label for="quiz'+i+'" class="center">'+respostas[i]+'</label>'+
+                  '</div>';
+                }
+              }
+            }
+                      
+            obj.opcoes +=
+            '<div style="display: none;">'+
+            ' <input type="radio" class="quiz_" id="quiz_" value=""/>'+
+            ' <label for="quiz_" class="center">nenhum</label>'+
+            '</div>';
+
+            obj.opcoes +=
+            '<div style="margin: 20px">'+
+            '  <button class="btn btn-outline-success responder">RESPONDER</button>'+
+            '  <button class="btn btn-primary pular">PULAR ('+pulos+'X)</button>'+
+            '  <button class="btn btn-primary eliminar">ELIMINAR ('+eliminar+'X)</button>'+
+            '  <button class="btn btn-primary finalizar">FINALIZAR</button>'+
+            '</div>';
+
+            $("#textoquiz").html(obj.opcoes);
+
+            var currentId = 'quiz_';
+            var currentValue = '';
+            var radios = document.querySelectorAll('.quiz_');
+
+            for (var i = 0; i < radios.length; i++) {
+              var radio = radios[i];
+              radio.addEventListener('change', function (event) {
+                if (event.target.value !== currentValue) {
+                    document.getElementById(currentId).checked = false;
+                    currentId = event.target.id;
+                    currentValue = event.target.value;
+                }
+              })
+            }
+
+            //BOTAO RESPONDER
+            $( ".responder" ).click(function() {
+              //VERIFICO SE SELECIONOU ALGUMA OPCAO
+              if (currentValue != '') {
+                //SE A RESPOSTA ESTIVER ERRADA
+                if (currentValue != resposta) {
+                  //PEGO A LISTA DE PERGUNTAS
+                  var data = JSON.parse(localStorage.getItem('lista-quiz'));
+                  //ACRESCENTO AO FINAL A PERGUNTA QUE O JOGADOR ERROU
+                  data.push(perguntaAtual);
+                  //SALVO A NOVA LISTA
+                  localStorage.setItem("lista-quiz", JSON.stringify(data));
+                  //INCREMENTO A QUANTIDADE DE PERGUNTAS
+                  total_perguntas++;             
+                  //INCREMENTO OS ERROS
+                  erros++
+                  //EXIBO A MENSAGEM DE ERRO 
+                  alert("Resposta errada!\n\nA resposta correta é: "+resposta);
+                  //INCREMENTO PARA A PROXIMA PERGUNTA
+                  num_perg++;
+                  //VERIFICO SE AINDA NAO CHEGOU AO FINAL DAS PERGUNTAS
+                  if (num_perg < total_perguntas) {
+                    //BUSCO A PROXIMA PERGUNTA
+                    buscaPergunta(num_perg);
+                  }
+                  else{
+                    alert('Parabêns! Você chegou ao fim do quiz.\n\nSua pontuação: '+acertos);
+                    location.href = 'quiz-da-biblia.php';
+                  }
+                }
+                //RESPOSTA CERTA
+                else{
+                  acertos++
+                  alert('Resposta certa!');
+                  num_perg++;
+                  if (num_perg < total_perguntas) {
+                    buscaPergunta(num_perg);
+                  }
+                  else{
+                    alert('Parabêns! Você chegou ao fim do quiz.\n\nSua pontuação: '+acertos);
+                    location.href = 'quiz-da-biblia.php';
+                  }
+                }
+                currentId = 'quiz_';
+                currentValue = '';
+                $('.quiz_').prop('checked', false);
+                $('#acerto').html('Acertos: '+acertos);
+                $('#erro').html('Erros: '+erros);
+              }
+              else{
+                alert('Escolha uma opção!');
+              }
+            });
+
+            //BOTAO PULAR
+            $( ".pular" ).click(function() {
+              //VERIFICO SE PODE PULAR
+              if (pulos > 0) {
+                //PEGO A LISTA DE PERGUNTAS
+                var data = JSON.parse(localStorage.getItem('lista-quiz'));
+                //ACRESCENTO AO FINAL A PERGUNTA QUE O JOGADOR PULOU
+                data.push(perguntaAtual);
+                //SALVO A NOVA LISTA
+                localStorage.setItem("lista-quiz", JSON.stringify(data));
+                //INCREMENTO A QUANTIDADE DE PERGUNTAS
+                total_perguntas++;
+
+                currentId = 'quiz_';
+                currentValue = '';
+                num_perg++;
+                pulos--;
+
+                if (num_perg < total_perguntas) {
+                  buscaPergunta(num_perg);
+                }
+                else{
+                  alert('Parabêns! Você chegou ao fim do quiz.\n\nSua pontuação: '+acertos);
+                  location.href = 'quiz-da-biblia.php';
+                }
+              }
+              else{
+                alert('Você não pode pular mais nenhuma pergunta.');
+              }
+            });
+
+            //BOTAO ELIMINAR
+            $( ".eliminar" ).click(function() {
+              //VERIFICO SE PODE ELIMINAR UMA PERGUNTA
+              if (eliminar > 0) {
+                //INCREMENTO 1 ACERTO
+                acertos++
+                $('#acerto').html('Acertos: '+acertos);
+                currentId = 'quiz_';
+                currentValue = '';
+                num_perg++;
+                eliminar--;
+
+                if (num_perg < total_perguntas) {
+                  buscaPergunta(num_perg);
+                }
+                else{
+                  alert('Parabêns! Você chegou ao fim do quiz.\n\nSua pontuação: '+acertos);
+                  location.href = 'quiz-da-biblia.php';
+                }
+              }
+              else{
+                alert('Você não pode eliminar mais nenhuma pergunta.');
+              }
+            });
+
+            $( ".finalizar" ).click(function() {
+              if (acertos > 0) {
+                lista_score.push(acertos);
+                localStorage.setItem("lista-score", JSON.stringify(lista_score));              
+              }
+              alert('Sua pontuação: '+acertos);
+              location.href = 'quiz-da-biblia.php';
+            });
+          });        
+        }
+        else{
+            opcoes ='<br><p class="lead">Atualize a página para carregar as perguntas!</p>';
+          $("#textoquiz").html(opcoes);
+        }
+      }
+
+      function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+        return array;
+      }
+
+      function carregaQuiz() {
+        localStorage.removeItem('lista-quiz');
+        var quiz = "quiz";
+        $.ajax({
+          type : "GET",
+          url : "quiz-da-biblia/"+quiz+".json",
+          dataType : "json",
+          success : function(data){
+            if (data) {
+              localStorage.setItem("lista-quiz", JSON.stringify(shuffleArray(data)));              
+            }
+            buscaPergunta(num_perg);
+          }
+        });
+      }
+
       $(function() {
+        carregaQuiz();
         
       });
     </script>
