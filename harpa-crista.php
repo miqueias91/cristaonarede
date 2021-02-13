@@ -41,6 +41,7 @@
     <!-- Begin page content -->
     <main class="flex-shrink-0">
       <section class="container">
+        <h1 class="mt-5">Harpa Cristã</h1>
         <div class="col-md" id="listaharpa">
           <br><br>
           <p><a class="conteudo-harpa lead" href="./texto-harpa.php?id=1&titulo=CHUVAS DE GRAÇA">1 - CHUVAS DE GRAÇA</a></p>
@@ -84,6 +85,8 @@
     data-ad-format="auto"
     data-full-width-responsive="true"></ins>
     <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
     <?php include_once './footer.php'; ?>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
@@ -109,9 +112,6 @@
       $(function() {
         listaHinario();
       });
-    </script>
-
-    (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
   </body>
 </html>

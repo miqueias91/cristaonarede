@@ -79,6 +79,7 @@ $capatual = !empty($capatual) ? $capatual : 1;
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
+    
     <?php include_once './footer.php'; ?>
 
     <script src="./js/bootstrap.bundle.min.js"></script>

@@ -45,7 +45,7 @@ $versao = $_GET['versao'] ? $_GET['versao'] : 'nvi';
     <main class="flex-shrink-0">
 
       <section class="container">
-        <h1 class="mt-5 text-center">Bíblia <?=strtoupper($versao)?></h1>
+        <h1 class="mt-5">Bíblia Sagrada - <?=strtoupper($versao)?></h1>
       </section>
 
       <section class="container">
@@ -164,18 +164,11 @@ $versao = $_GET['versao'] ? $_GET['versao'] : 'nvi';
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
+
     <?php include_once './footer.php'; ?>
+    
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/jquery-3.5.1.min.js"></script>  
     <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script type="text/javascript">
-      $(function() {
-
-
-
- 
-      });
-    </script>
-
   </body>
 </html>

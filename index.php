@@ -44,7 +44,6 @@ array('livro' => 'Sl', 'cap' => '91', 'ver' => '1'),
 array('livro' => 'Hb', 'cap' => '12', 'ver' => '1'),
 array('livro' => '2Tm', 'cap' => '4', 'ver' => '7'),
 array('livro' => 'Rm', 'cap' => '12', 'ver' => '21'),
-array('livro' => '1Ts', 'cap' => '5', 'ver' => '17'),
 array('livro' => 'Jo', 'cap' => '14', 'ver' => '18'),
 array('livro' => '1Co', 'cap' => '15', 'ver' => '55'),
 array('livro' => 'Sl', 'cap' => '41', 'ver' => '1'),
@@ -289,15 +288,11 @@ $mensagem = $mensagem[0];
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
+    
     <?php include_once './footer.php'; ?>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/jquery-3.5.1.min.js"></script>  
     <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <script type="text/javascript">
-      $(function() {
-        
-      });
-    </script>
   </body>
 </html>

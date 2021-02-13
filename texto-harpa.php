@@ -71,6 +71,7 @@ $id = $_GET['id'] && is_numeric($_GET['id']) ? $_GET['id'] : 1;
     <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
+    
     <?php include_once './footer.php'; ?>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
