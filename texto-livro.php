@@ -56,13 +56,28 @@ $texto = $app->buscaTexto($abrev, $numberchapter, $versao);
     <main class="flex-shrink-0">
 
       <section class="container">
-        <h1 class="mt-5 text-center">
-          <?php if ($texto) {
-          ?>
-          <span id="texto-livro-capitulo"><?= $texto['name']?> - <?=$texto['numberchapter']?> - Bíblia <?=strtoupper($versao)?></span>
-          <?php
-          } ?>
-        </h1>
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="mt-5"><?= $texto['name']?></h1>
+          </div>
+          <div class="col-md-2">
+            <select class="form-select form-select-lg mt-5 capitulo">
+              <option selected value="<?=$texto['numberchapter']?>"><?=$texto['numberchapter']?></option>
+              <?php 
+                if ($texto) {
+                  for ($i=1; $i <= $texto['numberallchapters']; $i++) { 
+                    echo '<option value="'.$i.'">'.$i.'</option>';
+                  }
+                }
+              ?>
+            </select>
+          </div>
+          <div class="col-md-4">
+            <h1 class="mt-5">Bíblia <?=strtoupper($versao)?></h1>
+          </div>
+        </div>
+
+              
       </section>
 
       <section class="container">
@@ -89,23 +104,6 @@ $texto = $app->buscaTexto($abrev, $numberchapter, $versao);
             <button id="ant-texto-livro" class="btn btn-outline-success" type="submit">Anterior</button>
             <button id="pro-texto-livro" class="btn btn-primary" type="submit">Próximo</button>
           </div>
-          <div class="col-md-2">
-            <p>
-            Capitulos: 
-            <select class="form-select form-select-lg mb-3 capitulo" aria-label="Default select example">
-              <option selected value="<?=$texto['numberchapter']?>"><?=$texto['numberchapter']?></option>
-              <?php 
-                if ($texto) {
-                  for ($i=1; $i <= $texto['numberallchapters']; $i++) { 
-                    echo '<option value="'.$i.'">'.$i.'</option>';
-                  }
-                }
-              ?>
-            </select>
-              
-            </p>
-          </div>
-
         </div>
       </section>
 
