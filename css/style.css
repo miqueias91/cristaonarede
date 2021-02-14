@@ -1,5 +1,5 @@
 .bg-dark {
-    background-color: #031730!important;
+    background-color: #072040!important;
 }
 .bg-dark {
     box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
@@ -22,7 +22,7 @@
   }
 }
 h1 {
-  color: #031730!important;
+  color: #072040!important;
 }
 
 .navbar-toggler:focus {
@@ -30,20 +30,20 @@ h1 {
 }
 .btn-primary:hover {
   color: #D9D9D9;
-  background-color: #031730;
-  border-color: #031730;
+  background-color: #072040;
+  border-color: #072040;
 }
 
 .btn-primary {
     color: #D9D9D9;
-    background-color: #031730;
-    border-color: #031730;
+    background-color: #072040;
+    border-color: #072040;
 }
 
 .btn-primary:active {
     color: #D9D9D9;
-    background-color: #031730;
-    border-color: #031730;
+    background-color: #072040;
+    border-color: #072040;
 }
 
 .btn-primary:active:focus, .show > .btn-primary.dropdown-toggle:focus {
@@ -52,8 +52,8 @@ h1 {
 
 .btn-primary:focus {
     color: #D9D9D9;
-    background-color: #031730;
-    border-color: #031730;
+    background-color: #072040;
+    border-color: #072040;
     box-shadow: none;
 }
 

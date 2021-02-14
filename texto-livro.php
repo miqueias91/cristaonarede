@@ -1,10 +1,16 @@
 <?php
+include_once "config/config.php";
+include_once "$CLASS_PATH/class.Biblia.php";
+
 $versao = !empty($_GET['versao']) ? $_GET['versao'] : 'nvi';
 $abrev = !empty($_GET['abrev']) ? $_GET['abrev'] : 'Gn';
-$livro = !empty($_GET['livro']) ? $_GET['livro'] : 'Gênesis';
-$ultimocap = !empty($_GET['cap']) ? $_GET['cap'] : '50';
-$capatual = !empty($capatual) ? $capatual : 1;
 
+if (!isset($numberchapter)){
+  $numberchapter = 1;
+}
+
+$app = new Biblia();
+$texto = $app->buscaTexto($abrev, $numberchapter, $versao);
 ?>
 <html lang="pt-br" class="h-100">
   <head>
@@ -50,16 +56,35 @@ $capatual = !empty($capatual) ? $capatual : 1;
     <main class="flex-shrink-0">
 
       <section class="container">
-        <h1 class="mt-5 text-center"><span id="texto-livro-capitulo"></span></h1>
+        <h1 class="mt-5 text-center">
+          <?php if ($texto) {
+          ?>
+          <span id="texto-livro-capitulo"><?= $texto['name']?> - <?=$texto['numberchapter']?> - Bíblia <?=strtoupper($versao)?></span>
+          <?php
+          } ?>
+        </h1>
       </section>
 
       <section class="container">
         <div class="row" id="texto-livro">
-          <center>
+          <center style='display: none;'>
             <img src="./img/carregando1.gif">
           </center>
+
+          <?php
+            if ($texto) {
+              foreach ($texto['chapters'] as $key => $row) {
+                echo '<div >
+                  <p style="text-align:justify;" class="txt_versiculo">
+                    <span style="font-weight:bold;">'.($key+1).'</span>
+                    &nbsp;&nbsp;'.$row.' 
+                  </p>
+                </div>';
+              }
+            }
+          ?>
         </div>
-        <div class="row" id="botoes" style="display: none;">
+        <div class="row" id="botoes">
           <div class="col-md-6">
             <button id="ant-texto-livro" class="btn btn-outline-success" type="submit">Anterior</button>
             <button id="pro-texto-livro" class="btn btn-primary" type="submit">Próximo</button>
@@ -88,93 +113,18 @@ $capatual = !empty($capatual) ? $capatual : 1;
     <script type="text/javascript">
 
       var versao = '<?=$versao?>';
-      var abrev = '<?=$abrev?>';
-      var livro = '<?=$livro?>';
-      var capatual = parseInt('<?=$capatual?>');
-      var ultimocap = parseInt('<?=$ultimocap?>');
+      var abrev = "<?=$texto['abbrev']?>";
+      var numberchapter = parseInt("<?=$texto['numberchapter']?>");
 
-      function buscaTexto(versaoId,abrev,capatual, livro) {
-        $("#texto-livro").html("<br><br><center><img src='./img/carregando1.gif'></center>");
-        $("#botoes").hide();
-        
-        var versaoId = versaoId || "nvi";
-        var selector = this;
-        var texts = [];
-        $.ajax({
-          type : "GET",
-          url : "biblia-sagrada/"+versaoId+".json",
-          dataType : "json",
-          success : function(data){
-            $(selector).each(function(){
-              var ref = abrev+""+capatual+".1-200";
-              var reg = new RegExp('([0-9]?[a-zA-Záàâãéèêíïó]{2,3})([0-9]+)[\.|:]([0-9]+)-?([0-9]{1,3})?');
-              var regex = reg.exec(ref);                    
-              var myBook = null;
-              var obj = {
-                ref : ref,
-                book : regex[1].toLowerCase(),
-                chapter : parseInt(regex[2]),
-                text : ""
-              };
-
-              for(i in data){
-                if(data[i].abbrev == obj.book){
-                    myBook = data[i];
-                }
-              }
-              for (var i in myBook.chapters[obj.chapter - 1]) {
-                if (myBook.chapters[obj.chapter - 1]) {
-                  var texto = myBook.chapters[obj.chapter - 1][i];
-                  obj.text += 
-                    '<div id="txt_versiculo'+abrev+'_'+capatual+'_'+i+'_">'+
-                      '<p style="text-align:justify;"  id="txt_versiculo'+abrev+'_'+capatual+'_'+i+'" class="txt_versiculo" abrev="'+abrev+'" num_capitulo="'+capatual+'" num_versiculo="'+i+'">'+
-                        '<span style="font-weight:bold;">'+(parseInt(i)+1)+'</span>'+
-                        '&nbsp;&nbsp;'+texto+ 
-                      '</p>'+
-                    '</div>';
-                }
-                $("#texto-livro-capitulo").html(livro+" "+capatual+' - Bíblia <?=strtoupper($versao)?>');
-                $("#texto-livro").html(obj.text);
-              }
-              $("#botoes").fadeIn();
-            });
-          }
-        });
-      }
       $(function() {
-        buscaTexto(versao, abrev, capatual, livro);
-
         $( "#ant-texto-livro" ).click(function() {
-          if (capatual <= 0) {
-            capatual = 1;
-          }
-          else {
-            capatual--;
-          }
-
-          if (capatual > 0) {
-            buscaTexto(versao, abrev, capatual, livro);
-          }
+          numberchapter--;
+          location.href = 'texto-livro.php?versao='+versao+'&abrev='+abrev+'&numberchapter='+numberchapter;
         });
 
         $( "#pro-texto-livro" ).click(function() {
-          if (capatual <= 0) {
-            capatual = 2;
-          }
-          else if (capatual > ultimocap) {
-            capatual = ultimocap;
-          }
-          else {
-            capatual++;
-          }
-
-          if (capatual <= ultimocap) {
-            buscaTexto(versao, abrev, capatual, livro);
-          }
-
-          if (capatual > ultimocap) {
-            capatual = ultimocap;
-          }
+          numberchapter++;
+          location.href = 'texto-livro.php?versao='+versao+'&abrev='+abrev+'&numberchapter='+numberchapter;
         });
       });
     </script>
