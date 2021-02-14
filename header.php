@@ -1,13 +1,15 @@
     <header>
       <!-- Fixed navbar -->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="./">CRISTÃO NA REDE</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="container">
+            <a class="navbar-brand" href="./">
+                <img src="img/logoazul.jpeg" width="200" alt="Logo Cristão na rede">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <ul class="nav navbar-nav me-auto mb-2 mb-md-0">
               <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="./">Início</a>
               </li>
@@ -36,10 +38,6 @@
                 <a class="nav-link" target="_BLANK" href="https://bit.ly/3l9zjYi">App's do Google Play</a>
               </li>
             </ul>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
           </div>
         </div>
       </nav>

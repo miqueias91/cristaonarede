@@ -43,20 +43,13 @@
     <main class="flex-shrink-0">
       <section class="container">
         <h1 class="mt-5">Quiz da Bíblia</h1>
-        <div class="row">
-          <div class="col-md-12">
             <br>
             <div class="row">
               <div class="col-md-4" style="font-weight: bold;"><span id="acerto">ACERTOS: 0</span></div>
               <div class="col-md-4" style="font-weight: bold;"><span id="erro">ERROS: 0</span></div>
               <!--<div class="col-md-4" style="font-weight: bold;"><span id="tempo">00:00:00</span></div>-->
             </div>
-            
-            
-            
             <div id="textoquiz"></div>
-          </div>
-        </div>
       </section>
     </main>
 
@@ -135,11 +128,19 @@
             '</div>';
 
             obj.opcoes +=
-            '<div style="margin: 20px">'+
+            '<div class="row" style="margin-top: 20px">'+
+            ' <div class="col-md-3" style="margin:20px 0">'+
             '  <button class="btn btn-outline-success responder">RESPONDER</button>'+
+            ' </div>'+
+            ' <div class="col-md-3" style="margin:20px 0">'+
             '  <button class="btn btn-primary pular">PULAR ('+pulos+'X)</button>'+
+            ' </div>'+
+            ' <div class="col-md-3" style="margin:20px 0">'+
             '  <button class="btn btn-primary eliminar">ELIMINAR ('+eliminar+'X)</button>'+
+            ' </div>'+
+            ' <div class="col-md-3" style="margin:20px 0">'+
             '  <button class="btn btn-primary finalizar">FINALIZAR</button>'+
+            ' </div>'+
             '</div>';
 
             $("#textoquiz").html(obj.opcoes);
