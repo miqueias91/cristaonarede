@@ -84,11 +84,28 @@ $texto = $app->buscaTexto($abrev, $numberchapter, $versao);
             }
           ?>
         </div>
-        <div class="row" id="botoes">
+        <div class="row">
           <div class="col-md-6">
             <button id="ant-texto-livro" class="btn btn-outline-success" type="submit">Anterior</button>
             <button id="pro-texto-livro" class="btn btn-primary" type="submit">Próximo</button>
           </div>
+          <div class="col-md-2">
+            <p>
+            Capitulos: 
+            <select class="form-select form-select-lg mb-3 capitulo" aria-label="Default select example">
+              <option selected value="<?=$texto['numberchapter']?>"><?=$texto['numberchapter']?></option>
+              <?php 
+                if ($texto) {
+                  for ($i=1; $i <= $texto['numberallchapters']; $i++) { 
+                    echo '<option value="'.$i.'">'.$i.'</option>';
+                  }
+                }
+              ?>
+            </select>
+              
+            </p>
+          </div>
+
         </div>
       </section>
 
@@ -117,6 +134,10 @@ $texto = $app->buscaTexto($abrev, $numberchapter, $versao);
       var numberchapter = parseInt("<?=$texto['numberchapter']?>");
 
       $(function() {
+        $( ".capitulo" ).change(function() {
+          location.href = 'texto-livro.php?versao='+versao+'&abrev='+abrev+'&numberchapter='+$(this).val();
+        });
+
         $( "#ant-texto-livro" ).click(function() {
           numberchapter--;
           location.href = 'texto-livro.php?versao='+versao+'&abrev='+abrev+'&numberchapter='+numberchapter;
