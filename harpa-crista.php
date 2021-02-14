@@ -14,6 +14,7 @@
     <link href="./css/sticky-footer-navbar.css" rel="stylesheet">
     <link href="./css/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" />
     <script data-ad-client="ca-pub-7091486462236476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     <style>

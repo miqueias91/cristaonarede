@@ -8,6 +8,7 @@ $versao = $_GET['versao'] ? $_GET['versao'] : 'nvi';
     <meta name="description" content="Diversas traduções e versões da Bíblia Sagrada, Quiz da Bíblia, Cifras e Harpa Cristã. Versículos e mensagens bíblicas da palavra de Deus diária para cada ocasião.">
     <meta name="author" content="Innovate Soft, and Miqueias Matias Caetano">
     <meta name="generator" content="Innovate Soft">
+
     <title>Cristão na Rede · Conteúdo cristão de qualidade</title>
     
 
@@ -16,6 +17,7 @@ $versao = $_GET['versao'] ? $_GET['versao'] : 'nvi';
     <link href="./css/sticky-footer-navbar.css" rel="stylesheet">
     <link href="./css/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico" />
     <script data-ad-client="ca-pub-7091486462236476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     <style>
