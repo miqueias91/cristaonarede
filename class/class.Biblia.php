@@ -23,6 +23,8 @@ class Biblia extends Conexao {
     $json_data = json_decode(file_get_contents("biblia-sagrada/$versao.json"),true);
     $dados = array();
 
+
+
     foreach ($json_data as $b => $book) {
       if (strtoupper($livro) == strtoupper($book['abbrev'])) {
 
@@ -47,7 +49,7 @@ class Biblia extends Conexao {
           location.href = 'texto-livro.php?versao=$versao&abrev=$dados[abbrev]&numberchapter=1';
           </script>";
         }
-        else if (($b > 0 && $b < 65) && $capitulo == 0){
+        else if (($b > 0 && $b <= 65) && $capitulo == 0){
           $dados['chapters'] = $json_data[($b-1)]['chapters'][0];
           $dados['name'] = $json_data[($b-1)]['name'];
           $dados['numberallchapters'] = sizeof($json_data[($b-1)]['chapters']);
