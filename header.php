@@ -32,6 +32,9 @@
                 <a class="nav-link" href="./harpa-crista.php">Harpa Cristã</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="./harpa-crista.php">Cantor Cristão</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="./quiz-da-biblia.php">Quiz da Bíblia</a>
               </li>
               <li class="nav-item">
