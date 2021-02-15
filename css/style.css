@@ -4,8 +4,13 @@
 .bg-dark {
     box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);
 }
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
 .navbar-dark .navbar-nav .nav-link {
     color: #D9D9D9;
+    font-size: 0.75em;
 }
 
 .bd-placeholder-img {
