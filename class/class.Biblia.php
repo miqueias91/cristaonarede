@@ -88,5 +88,72 @@ class Biblia extends Conexao {
     }
     return $dados;
   }
+
+
+
+  public function insereTexto($versao = 'nvi'){
+    $json_data = json_decode(file_get_contents("biblia-sagrada/$versao.json"),true);
+    $dados = array();
+    echo "<pre>";
+    foreach ($json_data as $b => $book) {
+      $dados['version'] = $versao.'_';
+      $testament = $b < 40 ? 1 : 2;
+      $chapter = 1;
+      foreach ($book['chapters'] as $c => $chapters) {
+        $verse = 1;
+        foreach ($chapters as $text) {
+          try {
+            
+              $sql = "
+              INSERT INTO verses (
+                id, 
+                version, 
+                testament, 
+                book,
+                chapter,
+                verse,
+                texto
+              ) 
+              VALUES (
+                :id, 
+                :version, 
+                :testament, 
+                :book,
+                :chapter,
+                :verse,
+                :texto
+              )";
+              echo  $sql."<br>";
+              $pdo = Conexao::getInstance()->prepare($sql);
+              $pdo->bindValue(':id', NULL, PDO::PARAM_INT);
+              $pdo->bindValue(":version", $dados['version'], PDO::PARAM_STR);
+              $pdo->bindValue(":testament", $testament, PDO::PARAM_STR);
+              $pdo->bindValue(":book", ($b+1), PDO::PARAM_STR);
+              $pdo->bindValue(":chapter", $chapter, PDO::PARAM_STR);
+              $pdo->bindValue(":verse", $verse, PDO::PARAM_STR);
+              $pdo->bindValue(":texto", $text, PDO::PARAM_STR);
+              $pdo->execute();
+               }
+    catch (Exception $e) {
+        echo "<br>".$e->getMessage();
+    }
+          $verse++;
+        }
+        $chapter++;
+
+      }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
 }
 ?>
