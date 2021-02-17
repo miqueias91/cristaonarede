@@ -106,3 +106,13 @@ a {
 .img_download span i:hover {
     opacity: 1;
 }
+
+footer .footer1 {
+  background-color: #7ED957!important;
+  color: #D9D9D9;
+}
+
+footer .footer2 {
+  background-color: #008037!important;
+  color: #D9D9D9;
+}

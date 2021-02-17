@@ -107,6 +107,7 @@ $mensagem = $mensagem[0];
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/sticky-footer-navbar.css" rel="stylesheet">
     <link href="./css/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fontawesome-free-5.6.3-web/css/all.css">
     <link href="./css/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico" />
     <script data-ad-client="ca-pub-7091486462236476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
