@@ -29,7 +29,7 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./harpa-crista.php">Harpa Cristã</a>
+                <a class="nav-link" href="./harpa.php">Harpa Cristã</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./cantor-cristao.php">Cantor Cristão</a>

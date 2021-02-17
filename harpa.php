@@ -14,11 +14,11 @@ include_once "config/config.php";
     
 
     <!-- Bootstrap core CSS -->
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/sticky-footer-navbar.css" rel="stylesheet">
-    <link href="../css/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
-    <link href="../css/style.css" rel="stylesheet">
-    <link rel="shortcut icon" href="../img/favicon.ico" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/sticky-footer-navbar.css" rel="stylesheet">
+    <link href="./css/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
+    <link href="./css/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./img/favicon.ico" />
     <script data-ad-client="ca-pub-7091486462236476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
     <style>
@@ -94,9 +94,9 @@ include_once "config/config.php";
     </script>
     <?php include_once './footer.php'; ?>
 
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/jquery-3.5.1.min.js"></script>  
-    <script src="../css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/jquery-3.5.1.min.js"></script>  
+    <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <script type="text/javascript">
       function listaHinario() {
         var text = "";
@@ -111,7 +111,7 @@ include_once "config/config.php";
             $("#listaharpa").html('<br><br>'+text);
           }
         };
-        xmlhttp.open("GET", "../files/harpa-crista/harpa.json", true);
+        xmlhttp.open("GET", "./files/harpa-crista/harpa.json", true);
         xmlhttp.send();
       }
       $(function() {
