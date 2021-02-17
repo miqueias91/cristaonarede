@@ -111,7 +111,7 @@
         xmlhttp.send();
       }
       $(function() {
-        listaHinario();
+        //listaHinario();
       });
     </script>
   </body>
