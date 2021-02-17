@@ -284,42 +284,47 @@ $mensagem = $mensagem[0];
         </div>
       </section>
 
+      <section>        
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>
+          window.fbAsyncInit = function() {
+            FB.init({
+              xfbml            : true,
+              version          : 'v9.0'
+            });
+          };
 
+          (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/pt_BR/sdk/xfbml.customerchat.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
 
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      xfbml            : true,
-      version          : 'v9.0'
-    });
-  };
-
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-<!-- Your Chat Plugin code -->
-<div class="fb-customerchat"
-  attribution="setup_tool"
-  page_id="374679509944619">
-</div>
-
-
-
-
-
-
-
+        <!-- Your Chat Plugin code -->
+        <div class="fb-customerchat"
+          attribution="setup_tool"
+          page_id="374679509944619"
+        logged_in_greeting="Bem vindo ao nosso site, é um prazer ter você aqui!"
+        logged_out_greeting="Bem vindo ao nosso site, é um prazer ter você aqui!">
+        </div>
+      </section>
 
 
 
-      
+
+
+
+
+
+
+
+
+
     </main>
 
     <!-- Anuncio1 -->
