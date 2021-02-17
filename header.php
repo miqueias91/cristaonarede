@@ -18,24 +18,24 @@
                   Bíblia Sagrada
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item biblia" href="./biblia-sagrada.php?versao=aa" versao="aa">Bíblia Almeida</a></li>
-                  <li><a class="dropdown-item biblia" href="./biblia-sagrada.php?versao=acf" versao="acf">Bíblia ACF</a></li>
-                  <li><a class="dropdown-item biblia" href="./biblia-sagrada.php?versao=arc" versao="arc">Bíblia ARC</a></li>
-                  <li><a class="dropdown-item biblia" href="./biblia-sagrada.php?versao=en_kjv" versao="kjv en">Bíblia KJV EN</a></li>
-                  <li><a class="dropdown-item biblia" href="./biblia-sagrada.php?versao=pt_kjv" versao="kjv pt">Bíblia KJV PT</a></li>
-                  <li><a class="dropdown-item biblia" href="./biblia-sagrada.php?versao=ntlh" versao="ntlh">Bíblia NTLH</a></li>
-                  <li><a class="dropdown-item biblia" href="./biblia-sagrada.php?versao=nvi" versao="nvi">Bíblia NVI</a></li>
-                  <li><a class="dropdown-item biblia" href="./biblia-sagrada.php?versao=viva" versao="viva">Bíblia Viva</a></li>
+                  <li><a class="dropdown-item biblia" href="./biblia.php?versao=aa" versao="aa">Bíblia Almeida</a></li>
+                  <li><a class="dropdown-item biblia" href="./biblia.php?versao=acf" versao="acf">Bíblia ACF</a></li>
+                  <li><a class="dropdown-item biblia" href="./biblia.php?versao=arc" versao="arc">Bíblia ARC</a></li>
+                  <li><a class="dropdown-item biblia" href="./biblia.php?versao=en_kjv" versao="kjv en">Bíblia KJV EN</a></li>
+                  <li><a class="dropdown-item biblia" href="./biblia.php?versao=pt_kjv" versao="kjv pt">Bíblia KJV PT</a></li>
+                  <li><a class="dropdown-item biblia" href="./biblia.php?versao=ntlh" versao="ntlh">Bíblia NTLH</a></li>
+                  <li><a class="dropdown-item biblia" href="./biblia.php?versao=nvi" versao="nvi">Bíblia NVI</a></li>
+                  <li><a class="dropdown-item biblia" href="./biblia.php?versao=viva" versao="viva">Bíblia Viva</a></li>
                 </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./harpa.php">Harpa Cristã</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./cantor-cristao.php">Cantor Cristão</a>
+                <a class="nav-link" href="./cantor.php">Cantor Cristão</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="./quiz-da-biblia.php">Quiz da Bíblia</a>
+                <a class="nav-link" href="./quiz.php">Quiz da Bíblia</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./midias.php">Mídias</a>
