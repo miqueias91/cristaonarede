@@ -130,9 +130,9 @@ if ($midias) {
       
       $(function() {
         $( ".img_download" ).click(function() {
+          var id = $(this).attr('id');
           $.ajax({
             url: "ajax_registradownload.php",
-            method: "GET",
             data: {id: id}
           });
         });
