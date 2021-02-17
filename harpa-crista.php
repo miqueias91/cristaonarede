@@ -1,4 +1,8 @@
 <!doctype html>
+<?php 
+include_once "config/config.php";
+
+?>
 <html lang="pt-br" class="h-100">
   <head>
     <meta charset="utf-8">
