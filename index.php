@@ -137,7 +137,7 @@ $mensagem = $mensagem[0];
     <main class="flex-shrink-0">
   
       <section class="container">
-        <h1 class="mt-5">Versículos do Dia</h1>
+        <h1 class="mt-5">Palavra do Dia</h1>
         <div style="background: #7ED957;color: #072040;border-radius: 5px;margin: 1.2em 0;padding: 1em;-webkit-box-shadow: 0 0 2px rgba(0,0,0,.1),0 1px 5px rgba(0,0,0,.1);box-shadow: 0 0 2px rgba(0,0,0,.1),0 1px 5px rgba(0,0,0,.1);">          
           <p class="lead"><?=$mensagem['text']?></p>
           <p class="text-right"><?=strtoupper($palavra['livro']).' '.$palavra['cap'].':'.$palavra['ver']?></p>
