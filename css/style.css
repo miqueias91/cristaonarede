@@ -116,3 +116,8 @@ footer .footer2 {
   background-color: #008037!important;
   color: #D9D9D9;
 }
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: #072040;
+}
