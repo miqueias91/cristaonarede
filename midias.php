@@ -130,11 +130,9 @@ if ($midias) {
       
       $(function() {
         $( ".img_download" ).click(function() {
-          var id = $(this).attr('id');
-          console.log(id)
           $.ajax({
             url: "ajax_registradownload.php",
-            method: "POST",
+            method: "GET",
             data: {id: id}
           });
         });
