@@ -61,7 +61,6 @@ if ($midias) {
       <section class="container">
         <h1 class="mt-5">Mídias</h1>
         <div class="row">
-          <h2 class="mt-2">Imagens</h2>
           <?php 
             if (isset($arrayMidias['imagem'])) {
               foreach ($arrayMidias['imagem'] as $m => $img) {
@@ -81,26 +80,6 @@ if ($midias) {
             else{
               echo '<div class="col-md-12">            
                 <p class="lead">Nenhuma imagem postada no momento.</p>
-              </div>';
-            }
-          ?>
-        </div>
-
-        <div class="row">
-          <h2 class="mt-2">Vídeos</h2>
-          <?php 
-            if (isset($arrayMidias['videos'])) {
-              foreach ($arrayMidias['videos'] as $v => $videos) {
-          ?>
-              <div class="col-md-3">            
-                <img src="<?=$videos['caminho']?>" alt="<?=$videos['nome']?>" class="img-thumbnail">
-              </div>
-          <?php 
-              }
-            }
-            else{
-              echo '<div class="col-md-12">            
-                <p class="lead">Nenhum vídeo postado no momento.</p>
               </div>';
             }
           ?>
