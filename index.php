@@ -145,7 +145,7 @@ $mensagem = $mensagem[0];
       </section>
 
       <section class="container">
-        <h1 class="mt-5">Bíblias</h1>
+        <h2 class="mt-2">Bíblias</h2>
         <div class="row">
           <div class="col-md-3">            
             <p class="lead"><a href="./biblia-sagrada.php?versao=aa" versao="aa">Nova Almeida Atualizada</a></p>
@@ -177,7 +177,7 @@ $mensagem = $mensagem[0];
       </section>
 
       <section class="container">
-        <h1 class="mt-5">Antigo Testamento</h1>
+        <h2 class="mt-2">Antigo Testamento</h2>
         <div class="row">
           <div class="col-md-3"><p><a class="conteudo-biblia lead" href="./texto-livro.php?versao=aa&abrev=Gn&livro=Gênesis&cap=50">Gênesis</a></p></div>
           <div class="col-md-3"><p><a class="conteudo-biblia lead" href="./texto-livro.php?versao=aa&abrev=Ex&livro=Êxodo&cap=40">Êxodo</a></p></div>
@@ -240,7 +240,7 @@ $mensagem = $mensagem[0];
       </section>
 
       <section class="container">
-        <h1 class="mt-5">Novo Testamento</h1>
+        <h2 class="mt-2">Novo Testamento</h2>
           <div class="row">
             <div class="col-md-3"><p><a class="conteudo-biblia lead" href="./texto-livro.php?versao=aa&abrev=Mt&livro=Mateus&cap=28">Mateus</a></p></div>
             <div class="col-md-3"><p><a class="conteudo-biblia lead" href="./texto-livro.php?versao=aa&abrev=Mc&livro=Marcos&cap=16">Marcos</a></p></div>

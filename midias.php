@@ -1,13 +1,17 @@
 <!doctype html>
 <?php 
 include_once "config/config.php";
-include_once "$CLASS_PATH/class.Biblia.php";
-include_once "$CLASS_PATH/class.System.php";
-$sys = new System();
-if (!$ambiente_desenvolvimento) {
-  $sys->registraAcesso();
+include_once "$CLASS_PATH/class.Midias.php";
+$md = new Midias();
+$midias = $md->buscaMidias();
+$arrayMidias = array();
+if ($midias) {
+  foreach ($midias as $key => $value) {
+    $arrayMidias[$value['tipomidia']][] = $value;
+  }
 }
-
+//echo "<pre>";
+//print_r($arrayMidias);die;
 
 ?>
 <html lang="pt-br" class="h-100">
@@ -24,6 +28,7 @@ if (!$ambiente_desenvolvimento) {
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/sticky-footer-navbar.css" rel="stylesheet">
     <link href="./css/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/fontawesome-free-5.6.3-web/css/all.css">
     <link href="./css/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico" />
     <script data-ad-client="ca-pub-7091486462236476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -56,33 +61,49 @@ if (!$ambiente_desenvolvimento) {
       <section class="container">
         <h1 class="mt-5">Mídias</h1>
         <div class="row">
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=aa" versao="aa">Nova Almeida Atualizada</a></p>
-          </div>
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=acf" versao="acf">Almeida Corrigida Fiel</a></p>
-          </div>
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=arc" versao="arc">Almeida Revista e Corrigida</a></p>
-          </div>
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=en_kjv" versao="en_kjv">King James Version EN</a></p>
-          </div>
+          <h2 class="mt-2">Imagens</h2>
+          <?php 
+            if (isset($arrayMidias['imagem'])) {
+              foreach ($arrayMidias['imagem'] as $m => $img) {
+          ?>
+              <div class="col-md-3 img_download" id="<?=$img['id_cristaonarede_midia']?>">
+                <a href="<?=$img['caminho']?>" download="<?=$img['nome']?>" title="Baixar">
+                  <span class="span_icon">
+                    <i class="fas fa-download"></i>
+                    <img src="<?=$img['caminho']?>" alt="<?=$img['nome']?>" class="img-thumbnail">
+                  </span>
+               </a>
+
+              </div>
+          <?php 
+              }
+            }
+            else{
+              echo '<div class="col-md-12">            
+                <p class="lead">Nenhuma imagem postada no momento.</p>
+              </div>';
+            }
+          ?>
         </div>
-        
+
         <div class="row">
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=ntlh" versao="ntlh">Nova Tradução na Linguagem de Hoje</a></p>
-          </div>
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=nvi" versao="nvi">Nova Versão Internacional</a></p>
-          </div>
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=pt_kjv" versao="pt_kjv">King James Version PT</a></p>
-          </div>
-          <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=viva" versao="viva">Nova Bíblia Viva</a></p>
-          </div>
+          <h2 class="mt-2">Vídeos</h2>
+          <?php 
+            if (isset($arrayMidias['videos'])) {
+              foreach ($arrayMidias['videos'] as $v => $videos) {
+          ?>
+              <div class="col-md-3">            
+                <img src="<?=$videos['caminho']?>" alt="<?=$videos['nome']?>" class="img-thumbnail">
+              </div>
+          <?php 
+              }
+            }
+            else{
+              echo '<div class="col-md-12">            
+                <p class="lead">Nenhum vídeo postado no momento.</p>
+              </div>';
+            }
+          ?>
         </div>
       </section>
 
@@ -105,5 +126,20 @@ if (!$ambiente_desenvolvimento) {
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/jquery-3.5.1.min.js"></script>  
     <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+      
+      $(function() {
+        $( ".img_download" ).click(function() {
+          var id = $(this).attr('id');
+          console.log(id)
+          $.ajax({
+            url: "ajax_registradownload.php",
+            method: "POST",
+            data: {id: id}
+          });
+        });
+
+      });
+    </script>
   </body>
 </html>

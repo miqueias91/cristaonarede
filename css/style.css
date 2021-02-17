@@ -26,7 +26,7 @@
     font-size: 3.5rem;
   }
 }
-h1 {
+h1,h2,h3,h4,h5 {
   color: #072040!important;
 }
 
@@ -87,4 +87,22 @@ h1 {
 a {
     color: #0d6efd;
     text-decoration: none;
+}
+.img_download span {
+  cursor: pointer;
+}
+.img_download span i {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 10px;
+  border: 1px solid #008037;
+  border-radius: 50%;
+  background-color: #008037;
+  opacity: 0.6;
+  color: #fff;
+  padding: 10px
+}
+
+.img_download span i:hover {
+    opacity: 1;
 }
