@@ -107,7 +107,7 @@
             $("#listaharpa").html('<br><br>'+text);
           }
         };
-        xmlhttp.open("GET", "./files/harpa-crista/harpa.json", true);
+        xmlhttp.open("GET", "files/harpa-crista/harpa.json", true);
         xmlhttp.send();
       }
       $(function() {
