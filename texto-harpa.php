@@ -92,7 +92,7 @@ $id = $_GET['id'] && is_numeric($_GET['id']) ? $_GET['id'] : 1;
 
         $.ajax({
           type : "GET",
-          url : "./harpa-crista/harpa.json",
+          url : "./files/harpa-crista/harpa.json",
           dataType : "json",
           success : function(data){
             $(selector).each(function(){

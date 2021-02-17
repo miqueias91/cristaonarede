@@ -20,7 +20,7 @@ class Biblia extends Conexao {
   }
 
   public function buscaTexto($livro, $capitulo, $versao = 'nvi'){
-    $json_data = json_decode(file_get_contents("biblia-sagrada/$versao.json"),true);
+    $json_data = json_decode(file_get_contents("files/biblia-sagrada/$versao.json"),true);
     $dados = array();
 
 

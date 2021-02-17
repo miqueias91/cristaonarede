@@ -302,7 +302,7 @@
         var quiz = "quiz";
         $.ajax({
           type : "GET",
-          url : "quiz-da-biblia/"+quiz+".json",
+          url : "files/quiz-da-biblia/"+quiz+".json",
           dataType : "json",
           success : function(data){
             if (data) {

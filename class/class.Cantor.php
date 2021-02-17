@@ -20,7 +20,7 @@ class Cantor extends Conexao {
   }
 
   public function buscaTituloCantor(){
-    $json_data = json_decode(file_get_contents("cantor-cristao/cantor.json"),true);
+    $json_data = json_decode(file_get_contents("files/cantor-cristao/cantor.json"),true);
     $dados = array();
     foreach ($json_data as $h => $cantor) {
       $dados[$cantor['id']] = $cantor['titulo'];
@@ -29,7 +29,7 @@ class Cantor extends Conexao {
   }
 
   public function buscaTextoCantor($n){
-    $json_data = json_decode(file_get_contents("cantor-cristao/cantor.json"),true);
+    $json_data = json_decode(file_get_contents("files/cantor-cristao/cantor.json"),true);
     if (sizeof($json_data) >= $n && $n > 0) {
       foreach ($json_data as $h => $cantor) {
         if ($cantor['id'] == $n) {
