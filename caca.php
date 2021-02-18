@@ -52,12 +52,14 @@ include_once "config/config.php";
       <section class="container">
         <h1 class="mt-5">Caça Palavra</h1>
         <div class="row">
-          <div class="col-md-12">            
+          <div class="col-md-6">            
             <div id='puzzle'></div>
           </div>
-          <div class="col-md-12">            
+          <div class="col-md-6">            
             <div id='words'></div>
           </div>
+        </div>
+        <div class="row">
           <div class="col-md-12">            
             <button id="solve" class="btn btn-outline-success">Resolver Caça Palavra</button>
           </div>
@@ -90,49 +92,49 @@ include_once "config/config.php";
       $(function() {
    
         var words = [
-          'Sustentabilidade',
-          'desenvolvimento',
-          'sustentável',
-          'econômicos',
-          'ambientais',
-          'inovação',
-          'combinação',
-          'mudanças',
-          'Alimentos',
-          'orgânicos',
-          'rentável',
-          'agrícolas', 
-          'ciclodevida',
-          'riscos',
-          'poluição',
-          'impactos',
-          'energia',
-          'Habilidade',
-          'Ecoeficiência',
-          'Lucro',
-          'Pessoas',
-          'Planeta',
-          'Equidade',
-          'Modelo',
-          'Pressões',
-          'Eficiência',
-          'Responsabilidade',
-          'Planodeação',
-          'Gestão',
-          'preservação',
-          'empreendedor',
-          'Comprometimento',
-          'sociedade',
-          'mídia',
-          'governo',
-          'comunidade',
-          'estratégia',
-          'transparente',
-          'qualidadedevida' , 
-          'públicos',
-          'socialmente',
-          'legislação',
-          'necessidades',
+          'Davi',
+          'Ester',
+          'Jacó',
+          'Jesus',
+          'Jonas',
+          'José',
+          'Maria',
+          'Paulo',
+          'Rute',
+          'Salomão',
+          'Sansão',
+          'Saul', 
+          'Tabita',
+          'Zaqueu',
+          'Jeová',
+          'Escravidão',
+          'Salvação',
+          'Servo',
+          'Justiça',
+          'Adoração',
+          'Fraternal',
+          'Humano',
+          'Monte',
+          'Vale',
+          'Deserto',
+          'Varão',
+          'Varoa',
+          'Menina',
+          'Deus',
+          'Gênesis',
+          'Êxodo',
+          'Levítico',
+          'Números',
+          'Deuteronômio',
+          'Josué',
+          'Juízes',
+          'Rute',
+          'Samuel',
+          'Reis' , 
+          'Crônicas',
+          'Esdras',
+          'Neemias',
+          'Jó',
           'áreassocial',
           'reutilização',
           'reciclagem',
@@ -185,7 +187,6 @@ include_once "config/config.php";
           'desperdício',
           'suporte',
           'atitude',
-          'estratégia',
           'prédio'
         ];
 
