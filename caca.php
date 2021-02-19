@@ -58,15 +58,24 @@ include_once "config/config.php";
           </div>
           <div class="col-md-4">
             <p class="lead">Palavras</p>
-            <div id='words'>
-              
-            </div>
+            <div id='words'></div>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-12">            
+          <div class="col-md-6">            
             <button id="solve" class="btn btn-outline-success">Resolver</button>
+            <button id="novoJogo" class="btn btn-outline-success">Novo Jogo</button>
           </div>
+ <!--          <div class="col-md-2">
+            <label for="quantidadePalavras">Quantidade de palavras</label>
+            <select class="form-select form-select-lg" id="quantidadePalavras">
+              <?php 
+                for ($i=1; $i <= 10; $i++) { 
+                  echo '<option value="'.$i.'0">'.$i.'0</option>';
+                }
+              ?>
+            </select>          
+          </div> -->
         </div>
       </section>
 
@@ -92,6 +101,21 @@ include_once "config/config.php";
     <script src="./js/wordfind.js"></script>
     <script type="text/javascript" src="./js/wordfindgame.js"></script>
     <script type="text/javascript">
+
+      function shuffle(array) {
+        var m = array.length, t, i;
+        // While there remain elements to shuffle…
+        while (m) {
+          // Pick a remaining element…
+          i = Math.floor(Math.random() * m--);
+          // And swap it with the current element.
+          t = array[m];
+          array[m] = array[i];
+          array[i] = t;
+        }
+        return array;
+      }
+
       
       $(function() {
    
@@ -191,22 +215,164 @@ include_once "config/config.php";
           'Dispensação',
           'Filho',
           'Pródigo',
+          'Sagrado',
+          'Arca',
+          'Aliança',
+          'Trombeta',
           'Revelação'
         ];
 
+        var quantidadePalavras = 10;
+        selectWorks = new Array();
+        for (var i = 0; i < shuffle(words).length; i++) {
+          if (i < quantidadePalavras) {
+            selectWorks.push(words[i]);
+          }
+        }
         // start a word find game
-        var gamePuzzle = wordfindgame.create(words, '#puzzle', '#words');
+        var gamePuzzle = wordfindgame.create(selectWorks, '#puzzle', '#words');
 
         $('#solve').click( function() {
-          wordfindgame.solve(gamePuzzle, words);
+          wordfindgame.solve(gamePuzzle, selectWorks);
         });
-
         // create just a puzzle, without filling in the blanks and print to console
-        var puzzle = wordfind.newPuzzle( words, {
+        var puzzle = wordfind.newPuzzle( selectWorks, {
           height: 20,
           width: 20
         });
         wordfind.print(puzzle);
+
+        $( "#novoJogo" ).click(function() {
+          location.href = 'caca.php';
+        });
+
+        // $( "#quantidadePalavras" ).change(function() {
+        //   var words = [
+        //     'Davi',
+        //     'Ester',
+        //     'Jacó',
+        //     'Jesus',
+        //     'Jonas',
+        //     'José',
+        //     'Maria',
+        //     'Paulo',
+        //     'Rute',
+        //     'Salomão',
+        //     'Sansão',
+        //     'Saul', 
+        //     'Tabita',
+        //     'Zaqueu',
+        //     'Jeová',
+        //     'Escravidão',
+        //     'Salvação',
+        //     'Servo',
+        //     'Justiça',
+        //     'Adoração',
+        //     'Fraternal',
+        //     'Humano',
+        //     'Monte',
+        //     'Vale',
+        //     'Deserto',
+        //     'Varão',
+        //     'Varoa',
+        //     'Menina',
+        //     'Deus',
+        //     'Gênesis',
+        //     'Êxodo',
+        //     'Levítico',
+        //     'Números',
+        //     'Deuteronômio',
+        //     'Josué',
+        //     'Juízes',
+        //     'Rute',
+        //     'Samuel',
+        //     'Reis' , 
+        //     'Crônicas',
+        //     'Esdras',
+        //     'Neemias',
+        //     'Jó',
+        //     'Salmos',
+        //     'Provérbios',
+        //     'Eclesiastes',
+        //     'Cânticos',
+        //     'Isaías',
+        //     'Jeremias',
+        //     'Lamentações',
+        //     'Ezequiel',
+        //     'Daniel',
+        //     'Oséias',
+        //     'Joel',
+        //     'Amós',
+        //     'Obadias',
+        //     'Jonas',
+        //     'Miquéias',
+        //     'Naum',
+        //     'Habacuque',
+        //     'Sofonias',
+        //     'Ageu',
+        //     'Zacarias',
+        //     'Malaquias',
+        //     'Mateus',
+        //     'Marcos',
+        //     'Lucas',
+        //     'João',
+        //     'Atos',
+        //     'Romanos',
+        //     'Coríntios',
+        //     'Gálatas',
+        //     'Efésios',
+        //     'Filipenses',
+        //     'Colossenses',
+        //     'Tessalonicenses',
+        //     'Timóteo',
+        //     'Tito',
+        //     'Filemom',
+        //     'Hebreus',
+        //     'Tiago',
+        //     'Pedro',
+        //     'Judas',
+        //     'Apocalipse',
+        //     'Pentecostes',
+        //     'Pentateuco',
+        //     'Sinai',
+        //     'Páscoa',
+        //     'Epístolas',
+        //     'Bíblia',
+        //     'Cristão',
+        //     'Harpa',
+        //     'Dispensação',
+        //     'Filho',
+        //     'Pródigo',
+        //     'Sagrado',
+        //     'Arca',
+        //     'Aliança',
+        //     'Trombeta',
+        //     'Revelação'
+        //   ];
+
+        //   var quantidadePalavras = $(this).val();
+        //   selectWorks = new Array();
+        //   for (var i = 0; i < shuffle(words).length; i++) {
+        //     if (i < quantidadePalavras) {
+        //       selectWorks.push(words[i]);
+        //     }
+        //   }
+        //   console.log(selectWorks)
+        //   $("#words ul").remove();
+        //   // start a word find game
+        //   var gamePuzzle = wordfindgame.create(selectWorks, '#puzzle', '#words');
+
+        //   $('#solve').click( function() {
+        //     wordfindgame.solve(gamePuzzle, selectWorks);
+        //   });
+
+        //   // create just a puzzle, without filling in the blanks and print to console
+        //   var puzzle = wordfind.newPuzzle( selectWorks, {
+        //     height: 20,
+        //     width: 20
+        //   });
+        //   wordfind.print(puzzle);
+        // });
       });
     </script>
   </body>
