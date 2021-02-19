@@ -51,31 +51,23 @@ include_once "config/config.php";
   
       <section class="container">
         <h1 class="mt-5">Caça Palavra</h1>
-        <div class="row">
-          <div class="col-md-8">
-            <p class="lead">Tabuleiro</p>      
-            <div id='puzzle'></div>
+        <div id="jogar" style="display: none;">          
+          <div class="row">
+            <div class="col-md-8">
+              <p class="lead">Tabuleiro</p>      
+              <div id='puzzle'></div>
+            </div>
+            <div class="col-md-4">
+              <p class="lead">Palavras</p>
+              <div id='words'></div>
+            </div>
           </div>
-          <div class="col-md-4">
-            <p class="lead">Palavras</p>
-            <div id='words'></div>
+          <div class="row">
+            <div class="col-md-6">            
+              <button id="solve" class="btn btn-outline-success">Resolver</button>
+              <button id="novoJogo" class="btn btn-outline-success">Novo Jogo</button>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">            
-            <button id="solve" class="btn btn-outline-success">Resolver</button>
-            <button id="novoJogo" class="btn btn-outline-success">Novo Jogo</button>
-          </div>
- <!--          <div class="col-md-2">
-            <label for="quantidadePalavras">Quantidade de palavras</label>
-            <select class="form-select form-select-lg" id="quantidadePalavras">
-              <?php 
-                for ($i=1; $i <= 10; $i++) { 
-                  echo '<option value="'.$i.'0">'.$i.'0</option>';
-                }
-              ?>
-            </select>          
-          </div> -->
         </div>
       </section>
 
@@ -99,7 +91,7 @@ include_once "config/config.php";
     <script src="./js/jquery-3.5.1.min.js"></script>  
     <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <script src="./js/wordfind.js"></script>
-    <script type="text/javascript" src="./js/wordfindgame.js"></script>
+    <script src="./js/wordfindgame.js"></script>
     <script type="text/javascript">   
       function shuffle(array) {
         var m = array.length, t, i;
@@ -115,8 +107,7 @@ include_once "config/config.php";
         return array;
       }
       
-      $(function() {
-   
+      $(function() {    
         var words = [
           'Davi',
           'Ester',
@@ -127,253 +118,92 @@ include_once "config/config.php";
           'Maria',
           'Paulo',
           'Rute',
-          'Salomão',
           'Sansão',
           'Saul', 
           'Tabita',
           'Zaqueu',
           'Jeová',
-          'Escravidão',
-          'Salvação',
           'Servo',
-          'Justiça',
-          'Adoração',
-          'Fraternal',
-          'Humano',
           'Monte',
           'Vale',
-          'Deserto',
           'Varão',
           'Varoa',
           'Menina',
           'Deus',
-          'Gênesis',
           'Êxodo',
-          'Levítico',
-          'Números',
-          'Deuteronômio',
           'Josué',
           'Juízes',
           'Rute',
           'Samuel',
           'Reis' , 
-          'Crônicas',
           'Esdras',
-          'Neemias',
           'Jó',
           'Salmos',
-          'Provérbios',
-          'Eclesiastes',
-          'Cânticos',
           'Isaías',
-          'Jeremias',
-          'Lamentações',
-          'Ezequiel',
           'Daniel',
           'Oséias',
           'Joel',
           'Amós',
-          'Obadias',
           'Jonas',
-          'Miquéias',
           'Naum',
-          'Habacuque',
-          'Sofonias',
           'Ageu',
-          'Zacarias',
-          'Malaquias',
           'Mateus',
           'Marcos',
           'Lucas',
           'João',
           'Atos',
-          'Romanos',
-          'Coríntios',
-          'Gálatas',
-          'Efésios',
-          'Filipenses',
-          'Colossenses',
-          'Tessalonicenses',
-          'Timóteo',
           'Tito',
-          'Filemom',
-          'Hebreus',
           'Tiago',
           'Pedro',
           'Judas',
-          'Apocalipse',
-          'Pentecostes',
-          'Pentateuco',
           'Sinai',
           'Páscoa',
-          'Epístolas',
           'Bíblia',
           'Cristão',
           'Harpa',
-          'Dispensação',
           'Filho',
-          'Pródigo',
-          'Sagrado',
-          'Arca',
-          'Aliança',
-          'Trombeta',
-          'Revelação'
+          'Arca'
         ];
-
-        var quantidadePalavras = 10;
-        selectWorks = new Array();
-        for (var i = 0; i < shuffle(words).length; i++) {
-          if (i < quantidadePalavras) {
-            selectWorks.push(words[i]);
-          }
+        var jogar = true;
+        var quantidadePalavras = 20;
+        var larguraTela = $(window).width();
+        if (larguraTela < 500) {
+          quantidadePalavras = 5;
+          jogar = false;
         }
 
-        // start a word find game
-        var gamePuzzle = wordfindgame.create(selectWorks, '#puzzle', '#words');
+        if (jogar) {
+          selectWorks = new Array();
+          for (var i = 0; i < shuffle(words).length; i++) {
+            if (i < quantidadePalavras) {
+              selectWorks.push(words[i]);
+            }
+          }
 
-        // resolver
-        $('#solve').click( function() {
-          wordfindgame.solve(gamePuzzle, selectWorks);
-        });
+          // start a word find game
+          var gamePuzzle = wordfindgame.create(selectWorks, '#puzzle', '#words');
 
-        var puzzle = wordfind.newPuzzle( selectWorks, {
-          height: 20,
-          width: 20
-        });
-        wordfind.print(puzzle);
+          // resolver
+          $('#solve').click( function() {
+            wordfindgame.solve(gamePuzzle, selectWorks);
+          });
 
-        $( "#novoJogo" ).click(function() {
-          location.href = 'caca.php';
-        });
+          var puzzle = wordfind.newPuzzle( selectWorks, {
+            height: 20,
+            width: 20
+          });
+          wordfind.print(puzzle);
 
-
-        // $( "#quantidadePalavras" ).change(function() {
-        //   var words = [
-        //     'Davi',
-        //     'Ester',
-        //     'Jacó',
-        //     'Jesus',
-        //     'Jonas',
-        //     'José',
-        //     'Maria',
-        //     'Paulo',
-        //     'Rute',
-        //     'Salomão',
-        //     'Sansão',
-        //     'Saul', 
-        //     'Tabita',
-        //     'Zaqueu',
-        //     'Jeová',
-        //     'Escravidão',
-        //     'Salvação',
-        //     'Servo',
-        //     'Justiça',
-        //     'Adoração',
-        //     'Fraternal',
-        //     'Humano',
-        //     'Monte',
-        //     'Vale',
-        //     'Deserto',
-        //     'Varão',
-        //     'Varoa',
-        //     'Menina',
-        //     'Deus',
-        //     'Gênesis',
-        //     'Êxodo',
-        //     'Levítico',
-        //     'Números',
-        //     'Deuteronômio',
-        //     'Josué',
-        //     'Juízes',
-        //     'Rute',
-        //     'Samuel',
-        //     'Reis' , 
-        //     'Crônicas',
-        //     'Esdras',
-        //     'Neemias',
-        //     'Jó',
-        //     'Salmos',
-        //     'Provérbios',
-        //     'Eclesiastes',
-        //     'Cânticos',
-        //     'Isaías',
-        //     'Jeremias',
-        //     'Lamentações',
-        //     'Ezequiel',
-        //     'Daniel',
-        //     'Oséias',
-        //     'Joel',
-        //     'Amós',
-        //     'Obadias',
-        //     'Jonas',
-        //     'Miquéias',
-        //     'Naum',
-        //     'Habacuque',
-        //     'Sofonias',
-        //     'Ageu',
-        //     'Zacarias',
-        //     'Malaquias',
-        //     'Mateus',
-        //     'Marcos',
-        //     'Lucas',
-        //     'João',
-        //     'Atos',
-        //     'Romanos',
-        //     'Coríntios',
-        //     'Gálatas',
-        //     'Efésios',
-        //     'Filipenses',
-        //     'Colossenses',
-        //     'Tessalonicenses',
-        //     'Timóteo',
-        //     'Tito',
-        //     'Filemom',
-        //     'Hebreus',
-        //     'Tiago',
-        //     'Pedro',
-        //     'Judas',
-        //     'Apocalipse',
-        //     'Pentecostes',
-        //     'Pentateuco',
-        //     'Sinai',
-        //     'Páscoa',
-        //     'Epístolas',
-        //     'Bíblia',
-        //     'Cristão',
-        //     'Harpa',
-        //     'Dispensação',
-        //     'Filho',
-        //     'Pródigo',
-        //     'Sagrado',
-        //     'Arca',
-        //     'Aliança',
-        //     'Trombeta',
-        //     'Revelação'
-        //   ];
-
-        //   var quantidadePalavras = $(this).val();
-        //   selectWorks = new Array();
-        //   for (var i = 0; i < shuffle(words).length; i++) {
-        //     if (i < quantidadePalavras) {
-        //       selectWorks.push(words[i]);
-        //     }
-        //   }
-        //   console.log(selectWorks)
-        //   $("#words ul").remove();
-        //   // start a word find game
-        //   var gamePuzzle = wordfindgame.create(selectWorks, '#puzzle', '#words');
-
-        //   $('#solve').click( function() {
-        //     wordfindgame.solve(gamePuzzle, selectWorks);
-        //   });
-
-        //   // create just a puzzle, without filling in the blanks and print to console
-        //   var puzzle = wordfind.newPuzzle( selectWorks, {
-        //     height: 20,
-        //     width: 20
-        //   });
-        //   wordfind.print(puzzle);
-        // });
+          $( "#novoJogo" ).click(function() {
+            location.href = 'caca.php';
+          }); 
+          $("#jogar").css('display','');    
+        }
+        else{
+          console.log(1)
+          $("#jogar").css('display','');
+          $("#jogar").html('<p class="lead">Utilize um dispositivo com a tela maior.</p>');
+        }
       });
     </script>
   </body>
