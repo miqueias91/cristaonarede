@@ -344,13 +344,11 @@ $mensagem = $mensagem[0];
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/jquery-3.5.1.min.js"></script>  
     <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
+
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
-
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
     <script>
       // Your web app's Firebase configuration
       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -367,7 +365,7 @@ $mensagem = $mensagem[0];
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
 
-      
+
       firebase.auth().signInAnonymously().catch(function(error) {
         var errorCode = error.code;
         var errorMessage = error.message;
