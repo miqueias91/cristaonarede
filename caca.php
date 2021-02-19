@@ -100,8 +100,7 @@ include_once "config/config.php";
     <script src="./css/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
     <script src="./js/wordfind.js"></script>
     <script type="text/javascript" src="./js/wordfindgame.js"></script>
-    <script type="text/javascript">
-
+    <script type="text/javascript">   
       function shuffle(array) {
         var m = array.length, t, i;
         // While there remain elements to shuffle…
@@ -115,7 +114,6 @@ include_once "config/config.php";
         }
         return array;
       }
-
       
       $(function() {
    
@@ -229,13 +227,15 @@ include_once "config/config.php";
             selectWorks.push(words[i]);
           }
         }
+
         // start a word find game
         var gamePuzzle = wordfindgame.create(selectWorks, '#puzzle', '#words');
 
+        // resolver
         $('#solve').click( function() {
           wordfindgame.solve(gamePuzzle, selectWorks);
         });
-        // create just a puzzle, without filling in the blanks and print to console
+
         var puzzle = wordfind.newPuzzle( selectWorks, {
           height: 20,
           width: 20
@@ -245,6 +245,7 @@ include_once "config/config.php";
         $( "#novoJogo" ).click(function() {
           location.href = 'caca.php';
         });
+
 
         // $( "#quantidadePalavras" ).change(function() {
         //   var words = [

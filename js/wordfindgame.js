@@ -282,19 +282,25 @@
 
         // attach events to the buttons
         // optimistically add events for windows 8 touch
-        if (window.navigator.msPointerEnabled) {
-          $('.puzzleSquare').on('MSPointerDown', startTurn);
-          $('.puzzleSquare').on('MSPointerOver', select);
-          $('.puzzleSquare').on('MSPointerUp', endTurn);
-        }
-        else {
-          $('.puzzleSquare').mousedown(startTurn);
-          $('.puzzleSquare').mouseenter(mouseMove);
-          $('.puzzleSquare').mouseup(endTurn);
-          $('.puzzleSquare').on("touchstart", startTurn);
-          $('.puzzleSquare').on("touchmove", touchMove);
-          $('.puzzleSquare').on("touchend", endTurn);
-        }
+        // if (window.navigator.msPointerEnabled) {
+        //   $('.puzzleSquare').on('MSPointerDown', startTurn);
+        //   $('.puzzleSquare').on('MSPointerOver', select);
+        //   $('.puzzleSquare').on('MSPointerUp', endTurn);
+        // }
+        // else {
+
+        //   $('.puzzleSquare').mousedown(startTurn);
+        //   $('.puzzleSquare').mouseenter(mouseMove);
+        //   $('.puzzleSquare').mouseup(endTurn);
+
+        //   $('.puzzleSquare').on("touchstart", startTurn);
+        //   $('.puzzleSquare').on("touchmove", touchMove);
+        //   $('.puzzleSquare').on("touchend", endTurn);
+        // }
+
+          $('.puzzleSquare').mouseup(startTurn);
+          $('.puzzleSquare').mouseover(mouseMove);
+          $('.puzzleSquare').mousedown(endTurn);
 
         return puzzle;
       },
