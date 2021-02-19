@@ -52,16 +52,20 @@ include_once "config/config.php";
       <section class="container">
         <h1 class="mt-5">Caça Palavra</h1>
         <div class="row">
-          <div class="col-md-6">            
+          <div class="col-md-8">
+            <p class="lead">Tabuleiro</p>      
             <div id='puzzle'></div>
           </div>
-          <div class="col-md-6">            
-            <div id='words'></div>
+          <div class="col-md-4">
+            <p class="lead">Palavras</p>
+            <div id='words'>
+              
+            </div>
           </div>
         </div>
         <div class="row">
           <div class="col-md-12">            
-            <button id="solve" class="btn btn-outline-success">Resolver Caça Palavra</button>
+            <button id="solve" class="btn btn-outline-success">Resolver</button>
           </div>
         </div>
       </section>
@@ -135,59 +139,59 @@ include_once "config/config.php";
           'Esdras',
           'Neemias',
           'Jó',
-          'áreassocial',
-          'reutilização',
-          'reciclagem',
-          'suprimentos',
-          'departamento',
-          'nicho',
-          'Governos',
-          'Sociedade',
-          'metas',
-          'MeioAmbiente',
-          'Qualidade',
-          'entradas',
-          'operações',
-          'Processos',
-          'evolução',
-          'Tratamento',
-          'prevenção',
-          'disposição',
-          'mercadorias',
-          'Ecológica',
-          'Cultural',
-          'Stakeholders',
-          'benefícios',
-          'permanência',
-          'naturais',
-          'educação',
-          'administração',
-          'conservar',
-          'favorecer',
-          'desenvolvimento',
-          'experiências',
-          'conhecimento',
-          'cada',
-          'individuo',
-          'práticas',
-          'manutenção',
-          'responsabilidade',
-          'sobrevivência',
-          'dependente',
-          'conservação',
-          'florestas',
-          'matas',
-          'rios',
-          'lagos',
-          'oceanos',
-          'sacolas',
-          'resíduos',
-          'lugares',
-          'lixo',
-          'desperdício',
-          'suporte',
-          'atitude',
-          'prédio'
+          'Salmos',
+          'Provérbios',
+          'Eclesiastes',
+          'Cânticos',
+          'Isaías',
+          'Jeremias',
+          'Lamentações',
+          'Ezequiel',
+          'Daniel',
+          'Oséias',
+          'Joel',
+          'Amós',
+          'Obadias',
+          'Jonas',
+          'Miquéias',
+          'Naum',
+          'Habacuque',
+          'Sofonias',
+          'Ageu',
+          'Zacarias',
+          'Malaquias',
+          'Mateus',
+          'Marcos',
+          'Lucas',
+          'João',
+          'Atos',
+          'Romanos',
+          'Coríntios',
+          'Gálatas',
+          'Efésios',
+          'Filipenses',
+          'Colossenses',
+          'Tessalonicenses',
+          'Timóteo',
+          'Tito',
+          'Filemom',
+          'Hebreus',
+          'Tiago',
+          'Pedro',
+          'Judas',
+          'Apocalipse',
+          'Pentecostes',
+          'Pentateuco',
+          'Sinai',
+          'Páscoa',
+          'Epístolas',
+          'Bíblia',
+          'Cristão',
+          'Harpa',
+          'Dispensação',
+          'Filho',
+          'Pródigo',
+          'Revelação'
         ];
 
         // start a word find game

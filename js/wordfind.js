@@ -359,7 +359,7 @@
         if (options.fillBlanks) {
           this.fillBlanks(puzzle, options);
         }
-
+        
         return puzzle;
       },
 
@@ -440,8 +440,6 @@
           }
           puzzleString += '\n';
         }
-
-        console.log(puzzleString);
         return puzzleString;
       }
     };

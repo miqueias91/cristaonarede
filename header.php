@@ -33,9 +33,15 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./cantor.php">Cantor Cristão</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./quiz.php">Quiz da Bíblia</a>
+              </li>          
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownGames" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Jogos Cristão
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownGames">
+                  <li><a class="dropdown-item" href="./caca.php">Caça Palavras</a></li>
+                  <li><a class="dropdown-item" href="./quiz.php">Quiz da Bíblia</a></li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="./midias.php">Mídias</a>

@@ -348,7 +348,7 @@ SOFTWARE.
 * Styles for the puzzle
 */
 #puzzle {
-  border: 1px solid black;
+  border: 1px solid #072040;
   padding: 20px;
   float: left;
   margin: 30px 20px;
@@ -420,11 +420,4 @@ button::-moz-focus-inner {
 #words .wordFound {
   text-decoration: line-through;
   color: red;
-}
-
-/**
-* Styles for the button
-*/
-#solve {
-  margin: 0 30px;
 }
