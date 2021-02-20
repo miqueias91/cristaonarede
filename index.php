@@ -149,30 +149,30 @@ $mensagem = $mensagem[0];
         <h2 class="mt-2">Bíblias</h2>
         <div class="row">
           <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=aa" versao="aa">Nova Almeida Atualizada</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=com.phonegap.climahojemobile" versao="aa">Nova Almeida Atualizada</a></p>
           </div>
           <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=acf" versao="acf">Almeida Corrigida Fiel</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=com.phonegap.eutenhodoisreais" versao="acf">Almeida Corrigida Fiel</a></p>
           </div>
           <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=arc" versao="arc">Almeida Revista e Corrigida</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.bibliaarc" versao="arc">Almeida Revista e Corrigida</a></p>
           </div>
           <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=en_kjv" versao="en_kjv">King James Version EN</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.abibliasagrada" versao="en_kjv">King James Version EN</a></p>
           </div>
         </div>
         <div class="row">
           <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=ntlh" versao="ntlh">Nova Tradução na Linguagem de Hoje</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=com.phonegap.iindicate" versao="ntlh">Nova Tradução na Linguagem de Hoje</a></p>
           </div>
           <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=nvi" versao="nvi">Nova Versão Internacional</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=com.phonegap.teindico" versao="nvi">Nova Versão Internacional</a></p>
           </div>
           <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=pt_kjv" versao="pt_kjv">King James Version PT</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.abibliasagrada" versao="pt_kjv">King James Version PT</a></p>
           </div>
           <div class="col-md-3">            
-            <p class="lead"><a href="./biblia-sagrada.php?versao=viva" versao="viva">Nova Bíblia Viva</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=com.phonegap.bibliaviva" versao="viva">Nova Bíblia Viva</a></p>
           </div>
         </div>
       </section>

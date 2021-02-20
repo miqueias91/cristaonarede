@@ -3,7 +3,10 @@
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container">
             <a class="navbar-brand" href="./">
-                <img src="img/logoletracinza.png" width="200" alt="Logo Cristão na rede">
+                <!-- <img id="logo" src="img/logoletracinza.png" width="200" alt="Logo Cristão na rede">
+<iframe src="img/logoletracinza.svg" frameborder="0"></iframe>-->
+<object data="img/logoletracinza.png" type="" width="200"></object>
+
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -40,6 +43,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownGames">
                   <li><a class="dropdown-item" href="./caca.php">Caça Palavras</a></li>
+                  <li><a class="dropdown-item" href="./memoria.php">Jogo da Memória</a></li>
                   <li><a class="dropdown-item" href="./quiz.php">Quiz da Bíblia</a></li>
                 </ul>
               </li>

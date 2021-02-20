@@ -105,6 +105,7 @@ $texto = $app->buscaTexto($abrev, $numberchapter, $versao);
           <div class="col-md-6">
             <button id="ant-texto-livro" class="btn btn-outline-success" type="submit">Anterior</button>
             <button id="pro-texto-livro" class="btn btn-primary" type="submit">Próximo</button>
+            <a href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.abibliasagrada" target="_BLANK" class="btn btn-primary">Baixar App <i class="fab fa-google-play"></i></a>
           </div>
         </div>
       </section>

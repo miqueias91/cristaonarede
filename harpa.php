@@ -48,6 +48,8 @@ include_once "config/config.php";
     <main class="flex-shrink-0">
       <section class="container">
         <h1 class="mt-5">Harpa Cristã</h1>
+        <a href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.abibliasagrada" target="_BLANK" class="btn btn-primary">Baixar App <i class="fab fa-google-play"></i></a>
+
         <div class="col-md" id="listaharpa">
           <br><br>
           <p><a class="conteudo-harpa lead" href="./texto-harpa.php?id=1&titulo=CHUVAS DE GRAÇA">1 - CHUVAS DE GRAÇA</a></p>

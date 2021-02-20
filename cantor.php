@@ -52,6 +52,8 @@ $texto = $app->buscaTituloCantor();
     <main class="flex-shrink-0">
       <section class="container">
         <h1 class="mt-5">Cantor Cristão</h1>
+          <a href="https://play.google.com/store/apps/details?id=com.phonegap.iindicate" target="_BLANK" class="btn btn-primary">Baixar App <i class="fab fa-google-play"></i></a>
+
         <div class="col-md" id="listacantor">
           <br><br>
           <?php 

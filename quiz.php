@@ -131,18 +131,22 @@
 
             obj.opcoes +=
             '<div class="row" style="margin-top: 20px">'+
-            ' <div class="col-md-3" style="margin:20px 0">'+
+            ' <div class="col-md-2" style="margin:20px 0">'+
             '  <button class="btn btn-outline-success responder">RESPONDER</button>'+
             ' </div>'+
-            ' <div class="col-md-3" style="margin:20px 0">'+
+            ' <div class="col-md-2" style="margin:20px 0">'+
             '  <button class="btn btn-primary pular">PULAR ('+pulos+'X)</button>'+
             ' </div>'+
-            ' <div class="col-md-3" style="margin:20px 0">'+
+            ' <div class="col-md-2" style="margin:20px 0">'+
             '  <button class="btn btn-primary eliminar">ELIMINAR ('+eliminar+'X)</button>'+
             ' </div>'+
-            ' <div class="col-md-3" style="margin:20px 0">'+
+            ' <div class="col-md-2" style="margin:20px 0">'+
             '  <button class="btn btn-primary finalizar">FINALIZAR</button>'+
             ' </div>'+
+            ' <div class="col-md-4" style="margin:20px 0">'+
+            '<a href="https://play.google.com/store/apps/details?id=com.phonegap.calculadorabasic" target="_BLANK" class="btn btn-primary">Baixar App <i class="fab fa-google-play"></i></a>'+
+            ' </div>'+
+
             '</div>';
 
             $("#textoquiz").html(obj.opcoes);
