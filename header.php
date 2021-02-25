@@ -54,6 +54,10 @@
                 <a class="nav-link" target="_BLANK" href="https://bit.ly/3l9zjYi">Aplicativos</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=c44abde5141a577b7d673475ea32d5ea&camp=1789&creative=9325&node=7874675011">Livros Religiosos e Espirituais</a>
+              </li>
+
+              <li class="nav-item">
                 <a class="nav-link" target="_BLANK" href="https://www.instagram.com/cristao.narede/">Contato</a>
               </li>
             </ul>
