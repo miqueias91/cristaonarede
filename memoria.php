@@ -100,10 +100,10 @@ include_once "config/config.php";
         IsSolved[n]=new Array(MaxY); 
       } 
 
-      PicNum = new Array(30);
+      PicNum = new Array(41);
 
-      Pic = new Array(31);
-      for (l=0; l < 31; l++){
+      Pic = new Array(42);
+      for (l=0; l < 42; l++){
         Pic[l] = new Image(); 
         Pic[l].src = "./files/memo/memo"+eval(l)+".jpeg"; 
       }
@@ -138,12 +138,12 @@ include_once "config/config.php";
         var mm;
         MaxS=S_New;
 
-        for (l=0; l<30; l++){
+        for (l=0; l<41; l++){
           PicNum[l]=l;
         }
         for (ll=0; ll<108; ll++){
-          n=Math.round(Math.random()*100)%30;
-          m=Math.round(Math.random()*100)%30;
+          n=Math.round(Math.random()*100)%41;
+          m=Math.round(Math.random()*100)%41;
           l=PicNum[n];
           PicNum[n]=PicNum[m];
           PicNum[m]=l;
