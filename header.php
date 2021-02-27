@@ -82,10 +82,14 @@
                 <a class="nav-link" target="_BLANK" href="https://bit.ly/3l9zjYi">Aplicativos</a>
               </li>           
 
-
               <li class="nav-item">
                 <a class="nav-link" target="_BLANK" href="https://www.instagram.com/cristao.narede/">Contato</a>
               </li>
+	           	<li class="nav-item">
+	                <a class="nav-link" target="_BLANK" href="https://www.paypal.com/donate?hosted_button_id=UVT2DU89C2X6N">DOE AGORA</a>
+	            </li>
+
+
             </ul>
           </div>
         </div>
