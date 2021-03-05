@@ -315,7 +315,7 @@ $mensagem = $mensagem[0];
         </div>
       </section>
 
-      <div id="publicidade"></div>
+      <div id="publicidade" title="Publicidade"></div>
 
 
 

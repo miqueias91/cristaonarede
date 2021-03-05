@@ -103,8 +103,7 @@ if (!$ambiente_desenvolvimento) {
           </div>
       </section>
 
-
-      <div id="publicidade"></div>
+      <div id="publicidade" title="Publicidade"></div>
     </main>
 
     <!-- Anuncio1 -->
@@ -133,7 +132,7 @@ if (!$ambiente_desenvolvimento) {
     <script>
       $(function() {
 
-        
+  
 
       });
     </script>
