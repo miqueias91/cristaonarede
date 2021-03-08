@@ -3,6 +3,8 @@
 include_once "config/config.php";
 include_once "$CLASS_PATH/class.Biblia.php";
 include_once "$CLASS_PATH/class.System.php";
+header("Access-Control-Allow-Origin: *");
+
 $sys = new System();
 if (!$ambiente_desenvolvimento) {
   $sys->registraAcesso();
