@@ -42,6 +42,42 @@
                   <li>
                     <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/gp/search?ie=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=eb844acd3e92995861f8645e93ecd393&camp=1789&creative=9325&index=books&keywords=Estudos da Religião">Estudos da Religião</a>
                   </li>
+                  <li>
+                    <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=d90dcb86201f419254c5488c30e27c24&camp=1789&creative=9325&node=18914209011">Automotivo</a>
+                  </li>
+                  <li>
+                    <a  class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=90151efefafc8c0c6c098d8743737ddc&camp=1789&creative=9325&node=17242603011">Bebês</a>
+                  </li>
+                  <li>
+                    <a  class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=f34dbded7ce368763d16a05eb24bc507&camp=1789&creative=9325&node=16194414011">Beleza</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=abe2f49f672d44acc3b4a935dd7d1b45&camp=1789&creative=9325&node=17681967011">Bolsas, Malas e Mochilas</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=6a9d4e2fe5dbe28bc787833b88d6d665&camp=1789&creative=9325&node=16194299011">Brinquedos e Jogos</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=14cb74ff99f9e2af12feeafa9c4a6a54&camp=1789&creative=9325&node=19416130011">CD e Vinil Religião e Gospel</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=1ab4d8d3740820e8830060197f14e839&camp=1789&creative=9325&node=16209062011">Eletrônicos</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=b8445ac70fcba1f7fb67feb94bb5c36e&camp=1789&creative=9325&node=18991252011">Instrumentos Musicais</a>
+                  </li>
+
+
+
+
+
+
+
+
+
+
+
+
                 </ul>
               </li>
               <li class="nav-item dropdown">

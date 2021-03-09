@@ -103,6 +103,60 @@ if (!$ambiente_desenvolvimento) {
               <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
             </div>
           </div>
+
+
+          <div class="row card">
+            <div class="col-md-12 card-body">
+              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=d90dcb86201f419254c5488c30e27c24&camp=1789&creative=9325&node=18914209011">Automotivo
+              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
+            </div>
+          </div>
+          <div class="row card">
+            <div class="col-md-12 card-body">
+              <a  class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=90151efefafc8c0c6c098d8743737ddc&camp=1789&creative=9325&node=17242603011">Bebês
+              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
+            </div>
+          </div>
+         <div class="row card">
+            <div class="col-md-12 card-body">
+              <a  class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=f34dbded7ce368763d16a05eb24bc507&camp=1789&creative=9325&node=16194414011">Beleza
+              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
+            </div>
+          </div>
+         <div class="row card">
+            <div class="col-md-12 card-body">
+              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=abe2f49f672d44acc3b4a935dd7d1b45&camp=1789&creative=9325&node=17681967011">Bolsas, Malas e Mochilas
+              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
+            </div>
+          </div>
+         <div class="row card">
+            <div class="col-md-12 card-body">
+              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=6a9d4e2fe5dbe28bc787833b88d6d665&camp=1789&creative=9325&node=16194299011">Brinquedos e Jogos
+              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
+            </div>
+          </div>
+          <div class="row card">
+            <div class="col-md-12 card-body">
+              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=14cb74ff99f9e2af12feeafa9c4a6a54&camp=1789&creative=9325&node=19416130011">CD e Vinil Religião e Gospel
+              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
+            </div>
+          </div>
+          <div class="row card">
+            <div class="col-md-12 card-body">
+              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=1ab4d8d3740820e8830060197f14e839&camp=1789&creative=9325&node=16209062011">Eletrônicos
+              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
+            </div>
+          </div>
+          <div class="row card">
+            <div class="col-md-12 card-body">
+              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=b8445ac70fcba1f7fb67feb94bb5c36e&camp=1789&creative=9325&node=18991252011">Instrumentos Musicais
+              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
+            </div>
+          </div>
+
+
+
+
       </section>
       <section class="container">
         <h1 class="mt-5">Recomendados para você</h1>
