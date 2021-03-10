@@ -19,8 +19,6 @@ if (!$ambiente_desenvolvimento) {
     <meta name="author" content="Innovate Soft, and Miqueias Matias Caetano">
     <meta name="generator" content="Innovate Soft">
     <title>Cristão na Rede · Conteúdo cristão de qualidade</title>
-    
-
     <!-- Bootstrap core CSS -->
     <link href="./css/bootstrap.min.css" rel="stylesheet">
     <link href="./css/sticky-footer-navbar.css" rel="stylesheet">
@@ -28,8 +26,6 @@ if (!$ambiente_desenvolvimento) {
     <link rel="stylesheet" href="./css/fontawesome-free-5.6.3-web/css/all.css">
     <link href="./css/style.css" rel="stylesheet">
     <link rel="shortcut icon" href="img/favicon.ico" />
-    <script data-ad-client="ca-pub-7091486462236476" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -60,7 +56,14 @@ if (!$ambiente_desenvolvimento) {
 
 
       <section class="container">
-        <h1 class="mt-5">Loja</h1>
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="mt-5">Loja</h1>
+          </div>
+          <div class="col-md-6">
+            <img src="./img/logoassociadoamazon.png" class="responsive mt-5 img-associado-amazon" style="width: 175px;height: 30px;">
+          </div>
+        </div>
           <div class="row card">
             <div class="col-md-12 card-body">
               <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/gp/search?ie=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=b4a22c34a9136fdaf41666ff22cb8e98&camp=1789&creative=9325&index=books&keywords=Bíblias">Bíblias
@@ -103,8 +106,6 @@ if (!$ambiente_desenvolvimento) {
               <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
             </div>
           </div>
-
-
           <div class="row card">
             <div class="col-md-12 card-body">
               <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=d90dcb86201f419254c5488c30e27c24&camp=1789&creative=9325&node=18914209011">Automotivo
@@ -153,11 +154,8 @@ if (!$ambiente_desenvolvimento) {
               <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
             </div>
           </div>
-
-
-
-
       </section>
+
       <section class="container">
         <h1 class="mt-5">Recomendados para você</h1>
 
@@ -194,17 +192,6 @@ if (!$ambiente_desenvolvimento) {
       <div id="publicidade" title="Publicidade"></div>
     </main>
 
-    <!-- Anuncio1 -->
-    <ins class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-7091486462236476"
-    data-ad-slot="5148404228"
-    data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    
     <?php include_once './footer.php'; ?>
 
     <script src="./js/bootstrap.bundle.min.js"></script>
@@ -221,7 +208,6 @@ if (!$ambiente_desenvolvimento) {
       $(function() {
 
   
-
       });
     </script>
 

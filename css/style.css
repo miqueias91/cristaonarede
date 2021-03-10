@@ -20,7 +20,9 @@
   -moz-user-select: none;
   user-select: none;
 }
-
+.img-associado-amazon {
+  float: right;
+}
 @media (min-width: 768px) {
   .bd-placeholder-img-lg {
     font-size: 3.5rem;
@@ -120,4 +122,9 @@ footer .footer2 {
 .form-control:focus {
     box-shadow: none;
     border-color: #072040;
+}
+@media (max-width: 500px) {
+  .img-associado-amazon {
+    float: left;
+  }
 }
