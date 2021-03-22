@@ -300,6 +300,20 @@ $mensagem = $mensagem[0];
       </section>
 
       <section class="container">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Horizontal 2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7091486462236476"
+             data-ad-slot="8888783157"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
+
+      <section class="container">
         <h2 class="mt-2">Novo Testamento</h2>
           <div class="row">
             <div class="col-md-3"><p><a class="conteudo-biblia lead" href="./texto-livro.php?versao=aa&abrev=Mt&livro=Mateus&cap=28">Mateus</a></p></div>

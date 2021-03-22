@@ -91,9 +91,21 @@ $texto = $app->buscaTexto($abrev, $numberchapter, $versao);
           <div class="col-md-4">
             <h1 class="mt-5">Bíblia <?=strtoupper($versao)?></h1>
           </div>
-        </div>
+        </div>    
+      </section>
 
-              
+      <section class="container">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Horizontal 2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7091486462236476"
+             data-ad-slot="8888783157"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
       </section>
 
       <section class="container">
