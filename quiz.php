@@ -45,6 +45,17 @@
     <main class="flex-shrink-0">
       <section class="container">
         <h1 class="mt-5">Quiz da Bíblia</h1>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Anuncio 2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7091486462236476"
+             data-ad-slot="3860366497"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
             <br>
             <div class="row">
               <div class="col-md-4" style="font-weight: bold;"><span id="acerto">ACERTOS: 0</span></div>
