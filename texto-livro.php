@@ -56,6 +56,20 @@ $texto = $app->buscaTexto($abrev, $numberchapter, $versao);
 
     <!-- Begin page content -->
     <main class="flex-shrink-0">
+      
+      <section class="container">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- Quadrado 1 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7091486462236476"
+             data-ad-slot="3860366497"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
 
       <section class="container">
         <div class="row">
@@ -110,19 +124,21 @@ $texto = $app->buscaTexto($abrev, $numberchapter, $versao);
         </div>
       </section>
 
+      <section class="container">        
+        <!-- Horizontal 1 -->
+        <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7091486462236476"
+        data-ad-slot="5148404228"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
 
     </main>
-    <!-- Anuncio1 -->
-    <ins class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-7091486462236476"
-    data-ad-slot="5148404228"
-    data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    
+     
     <?php include_once './footer.php'; ?>
 
     <script src="./js/bootstrap.bundle.min.js"></script>

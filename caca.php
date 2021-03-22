@@ -48,11 +48,10 @@ include_once "config/config.php";
 
     <!-- Begin page content -->
     <main class="flex-shrink-0">
-  
+
       <section class="container">
-        <h1 class="mt-5">Caça Palavra</h1>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Anuncio 2 -->
+        <!-- Quadrado 1 -->
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-7091486462236476"
@@ -62,6 +61,10 @@ include_once "config/config.php";
         <script>
              (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
+      </section>
+
+      <section class="container">
+        <h1 class="mt-5">Caça Palavra</h1>
         <div id="jogar" style="display: none;">          
           <div class="row">
             <div class="col-md-8">
@@ -81,7 +84,19 @@ include_once "config/config.php";
           </div>
         </div>
       </section>
-
+      
+      <section class="container">        
+        <!-- Horizontal 1 -->
+        <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7091486462236476"
+        data-ad-slot="5148404228"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
    
     </main>
 

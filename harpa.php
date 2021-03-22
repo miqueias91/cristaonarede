@@ -47,19 +47,22 @@ include_once "config/config.php";
     <!-- Begin page content -->
     <main class="flex-shrink-0">
       <section class="container">
+          <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+          <!-- Quadrado 1 -->
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-7091486462236476"
+               data-ad-slot="3860366497"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+               (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
+      </section>
+
+      <section class="container">
         <h1 class="mt-5">Harpa Cristã</h1>
         <a href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.abibliasagrada" target="_BLANK" class="btn btn-primary">Baixar App <i class="fab fa-google-play"></i></a>
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Anuncio 2 -->
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-7091486462236476"
-             data-ad-slot="3860366497"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>
-             (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
         <div class="col-md" id="listaharpa">
           <br><br>
           <p><a class="conteudo-harpa lead" href="./texto-harpa.php?id=1&titulo=CHUVAS DE GRAÇA">1 - CHUVAS DE GRAÇA</a></p>
@@ -94,17 +97,21 @@ include_once "config/config.php";
           <p><a class="conteudo-harpa lead" href="./texto-harpa.php?id=30&titulo=NÃO SOU MEU">30 - NÃO SOU MEU</a></p>
         </div>
       </section>
+
+      <section class="container">        
+        <!-- Horizontal 1 -->
+        <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-7091486462236476"
+        data-ad-slot="5148404228"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </section>
     </main>
-    <!-- Anuncio1 -->
-    <ins class="adsbygoogle"
-    style="display:block"
-    data-ad-client="ca-pub-7091486462236476"
-    data-ad-slot="5148404228"
-    data-ad-format="auto"
-    data-full-width-responsive="true"></ins>
-    <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
+
     <?php include_once './footer.php'; ?>
 
     <script src="./js/bootstrap.bundle.min.js"></script>

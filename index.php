@@ -137,7 +137,7 @@ $mensagem = $mensagem[0];
     <!-- Begin page content -->
     <main class="flex-shrink-0">
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-      <!-- Vertical -->
+      <!-- Vertical 1 -->
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-7091486462236476"
@@ -184,7 +184,7 @@ $mensagem = $mensagem[0];
 
       <section class="container">
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-        <!-- Horizontal 2 -->
+        <!-- Quadrado 1 -->
         <ins class="adsbygoogle"
              style="display:block"
              data-ad-client="ca-pub-7091486462236476"
@@ -208,10 +208,10 @@ $mensagem = $mensagem[0];
         <h2 class="mt-2">Bíblias</h2>
         <div class="row">
           <div class="col-md-3">            
-            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=com.phonegap.climahojemobile" versao="aa">Nova Almeida Atualizada</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.bibliaaa" versao="aa">Nova Almeida Atualizada</a></p>
           </div>
           <div class="col-md-3">            
-            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=com.phonegap.eutenhodoisreais" versao="acf">Almeida Corrigida Fiel</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.abibliasagrada" versao="acf">Almeida Corrigida Fiel</a></p>
           </div>
           <div class="col-md-3">            
             <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.bibliaarc" versao="arc">Almeida Revista e Corrigida</a></p>
@@ -222,16 +222,16 @@ $mensagem = $mensagem[0];
         </div>
         <div class="row">
           <div class="col-md-3">            
-            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=com.phonegap.iindicate" versao="ntlh">Nova Tradução na Linguagem de Hoje</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.bibliantlh" versao="ntlh">Nova Tradução na Linguagem de Hoje</a></p>
           </div>
           <div class="col-md-3">            
-            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=com.phonegap.teindico" versao="nvi">Nova Versão Internacional</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.abibliasagrada" versao="nvi">Nova Versão Internacional</a></p>
           </div>
           <div class="col-md-3">            
             <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.abibliasagrada" versao="pt_kjv">King James Version PT</a></p>
           </div>
           <div class="col-md-3">            
-            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=com.phonegap.bibliaviva" versao="viva">Nova Bíblia Viva</a></p>
+            <p class="lead"><a target="_BLANK" href="https://play.google.com/store/apps/details?id=br.com.innovatesoft.abibliasagrada" versao="viva">Nova Bíblia Viva</a></p>
           </div>
         </div>
       </section>
