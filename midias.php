@@ -93,7 +93,7 @@ if ($midias) {
                 <a href="<?=$img['caminho']?>" download="<?=$img['nome']?>" title="Baixar">
                   <span class="span_icon">
                     <i class="fas fa-download"></i>
-                    <img src="<?=$img['caminho']?>" alt="<?=$img['nome']?>" class="img-thumbnail">
+                    <img src="files/midias/thumbnail/<?=$img['id_cristaonarede_midia']?>.jpg" alt="<?=$img['nome']?>" class="img-thumbnail">
                   </span>
                </a>
 
