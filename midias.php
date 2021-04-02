@@ -89,7 +89,7 @@ if ($midias) {
             if (isset($arrayMidias['imagem'])) {
               foreach ($arrayMidias['imagem'] as $m => $img) {
           ?>
-              <div class="col-md-3 img_download" id="<?=$img['id_cristaonarede_midia']?>">
+              <div class="col-md-4 img_download" id="<?=$img['id_cristaonarede_midia']?>">
                 <a href="<?=$img['caminho']?>" download="<?=$img['nome']?>" title="Baixar">
                   <span class="span_icon">
                     <i class="fas fa-download"></i>
