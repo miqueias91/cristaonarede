@@ -370,32 +370,9 @@ $mensagem = $mensagem[0];
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+    <script src="js/firebasejs.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script src="js/onesignal.js"></script>
     <script src="js/publicidade.js"></script>
-    <script>
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      var firebaseConfig = {
-        apiKey: "AIzaSyBcEM9D2fDvZKd1GRR6dB8S_tAV72ZfVXc",
-        authDomain: "cristao-na-rede.firebaseapp.com",
-        projectId: "cristao-na-rede",
-        storageBucket: "cristao-na-rede.appspot.com",
-        messagingSenderId: "356851272550",
-        appId: "1:356851272550:web:d6f0571eed0c2eacccd6a7",
-        measurementId: "G-FNSSN115D1"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-
-
-      firebase.auth().signInAnonymously().catch(function(error) {
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(errorMessage)
-      });
-
-      
-    </script>
-
   </body>
 </html>
