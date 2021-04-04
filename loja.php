@@ -47,6 +47,15 @@ if (!$ambiente_desenvolvimento) {
 
     
     <!-- Custom styles for this template -->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "e3ebdf1f-bb9d-4f22-a8a5-1dfc979cf834",
+        });
+      });
+    </script>
   </head>
   <body class="d-flex flex-column h-100">
     <?php include_once './header.php'; ?>
@@ -224,6 +233,8 @@ if (!$ambiente_desenvolvimento) {
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+    <script src="./js/firebasejs.js"></script>
+    <script src="./js/onesignal.js"></script>
     <script src="js/publicidade.js"></script>
 
     <script>

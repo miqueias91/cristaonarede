@@ -1,7 +1,6 @@
 OneSignal.push(function() {
   	/* These examples are all valid */
   	OneSignal.getUserId(function(userId) {
-	    console.log("OneSignal User ID:", userId);
 	    window.localStorage.setItem('userId',userId);
 
 	    var userId = window.localStorage.getItem('userId');
@@ -53,4 +52,4 @@ function dateTime() {
       seg = '0'+seg;
     }
     return ano+'-'+mes+'-'+dia+' '+hora+':'+min+':'+seg;
-  },
+}
