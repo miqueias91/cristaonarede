@@ -1,6 +1,7 @@
 <!doctype html>
 <?php 
 include_once "config/config.php";
+include_once "$CLASS_PATH/class.Dicionario.php";
 include_once "$CLASS_PATH/class.System.php";
 header("Access-Control-Allow-Origin: *");
 
@@ -8,6 +9,13 @@ $sys = new System();
 if (!$ambiente_desenvolvimento) {
   $sys->registraAcesso();
 }
+
+$dc = new Dicionario();
+$id = $_GET['id'] ? $_GET['id'] : 1;
+$listaDic = $dc->buscaDicionario($id);
+$giria = $listaDic[0];
+//echo "<pre>";
+//print_r($giria);die;
 
 ?>
 <html lang="pt-br" class="h-100">
@@ -69,36 +77,23 @@ if (!$ambiente_desenvolvimento) {
       <section class="container">
         <div class="row">
           <div class="col-md-6">
-            <h1 class="mt-5">Contato</h1>
+            <h1 class="mt-5"><?=$giria['giria']?></h1>
           </div>
 
-    <div class="row">
-      <div class="col">
-          <div class="card-body text-center">
-            <input type="hidden" name="token" id="token" value="site-cristaonarede">
-            <input type="hidden" name="redirect_uri" id="redirect_uri" value="./contato.php">
-            <select class="form-control" name="assunto" id="assunto">
-              <option value="">Assunto</option>
-              <option value="oracao">Pedir Oração</option>
-              <option value="anuncios">Anúncios</option>
-              <option value="informacao">Informação</option>
-              <option value="duvidas">Dúvidas</option>
-              <option value="sugestoes">Sugestões</option>
-              <option value="outro">Outro</option>
-            </select>
+          <div class="row">
+            <div class="col">
+                <div class="card-body text-center">
+                  <br>
+                  <textarea class="form-control" name="significado" id="significado" style="height: 100px"><?=$giria['significado']?></textarea>
+                  <br>
+                  <textarea class="form-control" name="exemplo" id="exemplo" style="height: 100px" placeholder="Exemplo..."><?=$giria['exemplo']?></textarea>
+                  <br>
+                  <button class="btn btn-outline-success enviar-sugestao" type="submit">Enviar Sugestão De Mudança</button>
+                  <button class="btn btn-primary enviar-denunciar" type="submit">Denunciar</button>
 
-            <br>
-            <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
-            <br>
-            <input type="text" class="form-control celular" name="celular" id="celular" placeholder="Celular">
-            <br>
-            <textarea class="form-control" name="mensagem" id="mensagem" style="height: 100px" placeholder="Mensagem"></textarea>
-            <br>
-            <button class="btn btn-outline-success enviar-mensagem" type="submit">Enviar Mensagem</button>
-
+                </div>
+            </div>
           </div>
-      </div>
-    </div>
           
 
       </section>
@@ -162,62 +157,12 @@ if (!$ambiente_desenvolvimento) {
     <script src="./js/jquery.mask.min.js"></script>
 
     <script>
-      function validacaoEmail (field) {
-        if (field.search("@") >= 0) {
-          return true;
-        }
-        return false;
-      }
+
       $(function() {
-        $('.celular').mask('(99) 9 9999-9999');
-
-        $('.enviar-mensagem').click(function(){
-          var assunto = $('#assunto').val();
-          var email = $('#email').val();
-          var celular = $('#celular').val();
-          var mensagem = $('#mensagem').val();
-
-          if (assunto == '') {
-            alert('Informe o assunto.');
-          }
-          else if (email == '') {
-            alert('Informe o e-mail.');
-          }
-          else if (!validacaoEmail(email)) {
-            alert('Informe um e-mail válido.');
-          }
-          else if (celular == '') {
-            alert('Informe o celular.');
-          }
-          else if (mensagem == '') {
-            alert('Informe a mensagem.');
-          }
-          else{
-            $.ajax({//ajax que busca os campos do requerimento bem como sua descrição
-                url: "https://www.innovatesoft.com.br/registra-mensagem.php",
-                dataType: 'json',
-                type: 'post',
-                data: {
-                    'assunto': assunto,
-                    'email': email,
-                    'celular': celular,
-                    'mensagem': mensagem,
-                    'userId': $('#token').val()
-                },
-                error: function(e) {
-                    alert("Houve falha ao enviar a mensagem. Gentileza tente novamente.");
-                },
-                success: function(s) {
-                    alert('Mensagem enviada com sucesso.');
-                    window.location.href=$('#redirect_uri').val();
-                },
-            });
-          }
+        $('.enviar-denunciar').click(function(){
+          alert('Nos relate o motivo da denúncia desse significado.');
+          window.location.href='./denuncia-dicionario.php?id=<?=$id?>';
         });
-
-
-
-  
       });
     </script>
 

@@ -63,18 +63,6 @@
                   <li>
                     <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=b8445ac70fcba1f7fb67feb94bb5c36e&camp=1789&creative=9325&node=18991252011">Instrumentos Musicais</a>
                   </li>
-
-
-
-
-
-
-
-
-
-
-
-
                 </ul>
               </li>
               <li class="nav-item dropdown">
@@ -106,6 +94,7 @@
                   <li><a class="dropdown-item" href="./caca.php">Caça Palavras</a></li>
                   <li><a class="dropdown-item" href="./memoria.php">Jogo da Memória</a></li>
                   <li><a class="dropdown-item" href="./quiz.php">Quiz da Bíblia</a></li>
+                  <li><a class="dropdown-item" href="./dicionario.php">Dicionário de Crente</a></li>
                 </ul>
               </li>
               <li class="nav-item">
