@@ -10,7 +10,7 @@
 	      		<div class="col-md-12">
           			<a style="color: #072040; font-weight: bold;" target="_BLANK" href="https://www.instagram.com/cristao.narede/"><i style=" font-size: 35px; padding: 10px;" class="fab fa-instagram"></i></a>
           			<a style="color: #072040; font-weight: bold;" target="_BLANK" href="https://www.facebook.com/cristao.narede"><i style=" font-size: 35px; padding: 10px;" class="fab fa-facebook-square"></i></a>
-          			<a style="color: #072040; font-weight: bold;" target="_BLANK" href="mailto:suporte.innovatesoft@gmail.com"><i style=" font-size: 35px; padding: 10px;" class="fas fa-envelope"></i></a>
+          			<a style="color: #072040; font-weight: bold;" target="_BLANK" href="mailto:suporte.cristaonarede@gmail.com"><i style=" font-size: 35px; padding: 10px;" class="fas fa-envelope"></i></a>
 	      		</div>
 	      	</div>
 	    </div>

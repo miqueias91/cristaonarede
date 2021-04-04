@@ -5,6 +5,8 @@ include_once "$CLASS_PATH/class.Biblia.php";
 include_once "$CLASS_PATH/class.System.php";
 header("Access-Control-Allow-Origin: *");
 
+$_GET['assunto'] = !empty($_GET['assunto']) ? $_GET['assunto'] : '';
+
 $sys = new System();
 if (!$ambiente_desenvolvimento) {
   $sys->registraAcesso();
@@ -70,107 +72,42 @@ if (!$ambiente_desenvolvimento) {
       <section class="container">
         <div class="row">
           <div class="col-md-6">
-            <h1 class="mt-5">Loja</h1>
+            <h1 class="mt-5">Contato</h1>
           </div>
-          <div class="col-md-6">
-            <img src="./img/logoassociadoamazon.png" class="responsive mt-5 img-associado-amazon" style="width: 175px;height: 30px;">
+
+    <div class="row">
+      <div class="col">
+          <div class="card-body text-center">
+            <input type="hidden" name="token" id="token" value="site-cristaonarede">
+            <input type="hidden" name="redirect_uri" id="redirect_uri" value="./contato.php">
+            <select class="form-control" name="assunto" id="assunto">
+              <option value="">Assunto</option>
+              <option value="oracao">Pedir Oração</option>
+              <option value="anuncios">Anúncios</option>
+              <option value="informacao">Informação</option>
+              <option value="duvidas">Dúvidas</option>
+              <option value="sugestoes">Sugestões</option>
+              <option value="outro">Outro</option>
+            </select>
+
+            <br>
+            <input type="email" class="form-control" name="email" id="email" placeholder="E-mail">
+            <br>
+            <input type="text" class="form-control celular" name="celular" id="celular" placeholder="Celular">
+            <br>
+            <textarea class="form-control" name="mensagem" id="mensagem" style="height: 100px" placeholder="Mensagem"></textarea>
+            <br>
+            <button class="btn btn-outline-success enviar-mensagem" type="submit">Enviar Mensagem</button>
+
           </div>
-        </div>
-          <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/gp/search?ie=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=b4a22c34a9136fdaf41666ff22cb8e98&camp=1789&creative=9325&index=books&keywords=Bíblias">Bíblias
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-          <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=c44abde5141a577b7d673475ea32d5ea&camp=1789&creative=9325&node=7874675011">Livros
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-          <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/gp/search?ie=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=84d230189a204705d2f30c6fc64b7ddd&camp=1789&creative=9325&index=books&keywords=catolicismo">Catolicismo
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-          </div>
-          </div>
-          <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/gp/search?ie=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=512b015aee30b1121e35104a56b228d9&camp=1789&creative=9325&index=books&keywords=teologia">Teologia
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-          <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/gp/search?ie=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=8117835ddda0f85bb6fa19c6b9703b18&camp=1789&creative=9325&index=books&keywords=vida cristã">Vida Cristã
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-          <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/gp/search?ie=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=fb65ae0ccd0f38f3d5674752e76c826c&camp=1789&creative=9325&index=books&keywords=judaísmo">Judaísmo
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-          <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/gp/search?ie=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=eb844acd3e92995861f8645e93ecd393&camp=1789&creative=9325&index=books&keywords=Estudos da Religião">Estudos da Religião
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-          <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=d90dcb86201f419254c5488c30e27c24&camp=1789&creative=9325&node=18914209011">Automotivo
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-          <div class="row card">
-            <div class="col-md-12 card-body">
-              <a  class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=90151efefafc8c0c6c098d8743737ddc&camp=1789&creative=9325&node=17242603011">Bebês
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-         <div class="row card">
-            <div class="col-md-12 card-body">
-              <a  class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=f34dbded7ce368763d16a05eb24bc507&camp=1789&creative=9325&node=16194414011">Beleza
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-         <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=abe2f49f672d44acc3b4a935dd7d1b45&camp=1789&creative=9325&node=17681967011">Bolsas, Malas e Mochilas
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-         <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=6a9d4e2fe5dbe28bc787833b88d6d665&camp=1789&creative=9325&node=16194299011">Brinquedos e Jogos
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-          <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=14cb74ff99f9e2af12feeafa9c4a6a54&camp=1789&creative=9325&node=19416130011">CD e Vinil Religião e Gospel
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-          <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=1ab4d8d3740820e8830060197f14e839&camp=1789&creative=9325&node=16209062011">Eletrônicos
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
-          <div class="row card">
-            <div class="col-md-12 card-body">
-              <a class="dropdown-item" target="_blank" href="https://www.amazon.com.br/b?_encoding=UTF8&tag=miqueias91-20&linkCode=ur2&linkId=b8445ac70fcba1f7fb67feb94bb5c36e&camp=1789&creative=9325&node=18991252011">Instrumentos Musicais
-              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
-            </div>
-          </div>
+      </div>
+    </div>
+          
+
       </section>
 
       <section class="container">
         <h1 class="mt-5">Recomendados para você</h1>
-
           <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=miqueias91-20&marketplace=amazon&amp;region=BR&placement=8581581889&asins=8581581889&linkId=00f507e36a7926ec53dbbff4851d0d3f&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
           </iframe>
 
@@ -225,9 +162,64 @@ if (!$ambiente_desenvolvimento) {
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
     <script src="js/publicidade.js"></script>
+    <script src="./js/jquery.mask.min.js"></script>
 
     <script>
+      function validacaoEmail (field) {
+        if (field.search("@") >= 0) {
+          return true;
+        }
+        return false;
+      }
       $(function() {
+        $('#assunto').val('<?=$_GET[assunto]?>');
+        $('.celular').mask('(99) 9 9999-9999');
+
+        $('.enviar-mensagem').click(function(){
+          var assunto = $('#assunto').val();
+          var email = $('#email').val();
+          var celular = $('#celular').val();
+          var mensagem = $('#mensagem').val();
+
+          if (assunto == '') {
+            alert('Informe o assunto.');
+          }
+          else if (email == '') {
+            alert('Informe o e-mail.');
+          }
+          else if (!validacaoEmail(email)) {
+            alert('Informe um e-mail válido.');
+          }
+          else if (celular == '') {
+            alert('Informe o celular.');
+          }
+          else if (mensagem == '') {
+            alert('Informe a mensagem.');
+          }
+          else{
+            $.ajax({//ajax que busca os campos do requerimento bem como sua descrição
+                url: "https://www.innovatesoft.com.br/registra-mensagem.php",
+                dataType: 'json',
+                type: 'post',
+                data: {
+                    'assunto': assunto,
+                    'email': email,
+                    'celular': celular,
+                    'mensagem': mensagem,
+                    'userId': $('#token').val()
+                },
+                error: function(e) {
+                    alert("Houve falha ao enviar a mensagem. Gentileza tente novamente.");
+                },
+                success: function(s) {
+                    alert('Mensagem enviada com sucesso.');
+                    window.location.href=$('#redirect_uri').val();
+                },
+            });
+          }
+        });
+
+
 
   
       });

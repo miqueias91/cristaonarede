@@ -116,7 +116,7 @@
               </li>           
 
               <li class="nav-item">
-                <a class="nav-link" target="_BLANK" href="https://www.instagram.com/cristao.narede/">Contato</a>
+                <a class="nav-link" href="./contato.php">Contato</a>
               </li>
 	           	<li class="nav-item">
 	                <a class="nav-link" target="_BLANK" href="./doe.php">DOE AGORA</a>

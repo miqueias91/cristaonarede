@@ -66,13 +66,13 @@ h1,h2,h3,h4,h5,p {
 
 .btn-outline-success:hover {
     color: #008037;
-    background-color: #D9D9D9;
+    background-color: transparent;
     border-color: #008037;
 }
 
 .btn-outline-success:active {
     color: #008037;
-    background-color: #D9D9D9;
+    background-color: transparent;
     border-color: #008037;
 }
 
@@ -82,7 +82,7 @@ h1,h2,h3,h4,h5,p {
 
 .btn-outline-success:focus {
     color: #008037;
-    background-color: #D9D9D9;
+    background-color: transparent;
     border-color: #008037;
     box-shadow: none;
 }
