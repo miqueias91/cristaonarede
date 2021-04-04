@@ -22,10 +22,6 @@ OneSignal.push(function() {
 	      });
 	    }
 	});
-
-	OneSignal.on('notificationDisplay', function(event) {
-    	console.warn('OneSignal notification displayed:', event);
-  	});
 });
 
 
