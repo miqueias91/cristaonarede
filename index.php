@@ -131,6 +131,15 @@ $mensagem = $mensagem[0];
     
     <!-- Custom styles for this template -->
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "e3ebdf1f-bb9d-4f22-a8a5-1dfc979cf834",
+        });
+      });
+    </script>
+
   </head>
   <body class="d-flex flex-column h-100">
     <?php include_once './header.php'; ?>

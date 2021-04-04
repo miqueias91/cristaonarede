@@ -1,11 +1,3 @@
-window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "e3ebdf1f-bb9d-4f22-a8a5-1dfc979cf834",
-    });
-});
-
-
 OneSignal.push(function() {
   	/* These examples are all valid */
   	OneSignal.getUserId(function(userId) {
