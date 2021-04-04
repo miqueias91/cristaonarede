@@ -5,8 +5,6 @@ include_once "$CLASS_PATH/class.Biblia.php";
 include_once "$CLASS_PATH/class.System.php";
 header("Access-Control-Allow-Origin: *");
 
-$_GET['assunto'] = !empty($_GET['assunto']) ? $_GET['assunto'] : '';
-
 $sys = new System();
 if (!$ambiente_desenvolvimento) {
   $sys->registraAcesso();
@@ -172,7 +170,6 @@ if (!$ambiente_desenvolvimento) {
         return false;
       }
       $(function() {
-        $('#assunto').val('<?=$_GET[assunto]?>');
         $('.celular').mask('(99) 9 9999-9999');
 
         $('.enviar-mensagem').click(function(){
