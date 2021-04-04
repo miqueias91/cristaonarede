@@ -371,7 +371,7 @@ $mensagem = $mensagem[0];
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
     <script src="./js/firebasejs.js"></script>
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
     <script src="./js/onesignal.js"></script>
     <script src="./js/publicidade.js"></script>
   </body>
