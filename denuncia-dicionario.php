@@ -166,14 +166,15 @@ $giria = $listaDic[0];
               //$('#form').submit();
               $.ajax({
                 method: "POST",
-                url: "<?=$base_http?>/envia-denuncia.php?id=<?=$_GET['id']?>",
+                url: "<?=$base_http?>envia-denuncia.php?id=<?=$_GET['id']?>",
                 dataType: "html",
                 data: {
                   motivo: $("#motivo").val(),
                 },
                 success : function(data){
-                  alert('Denúncia enviada com sucesso.');
-                  window.location.href='./texto-dicionario.php?id=<?=$id?>';
+                  console.log(data)
+                 // alert('Denúncia enviada com sucesso.');
+                 // window.location.href='./texto-dicionario.php?id=<?=$id?>';
 
                 },
                 error : function(XMLHttpRequest, textStatus, errorThrown) {
