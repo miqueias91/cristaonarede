@@ -94,8 +94,6 @@ $giria = $listaDic[0];
               </div>
             </div>
         </form>
-          
-
       </section>
 
       <section class="container">
