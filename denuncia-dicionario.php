@@ -75,7 +75,7 @@ $giria = $listaDic[0];
       </section>
 
       <section class="container">
-        <form method="post" id="form">
+        <form method="POST" id="form" action="envia-denuncia.php?id=<?=$id?>" name='form' enctype='multipart/form-data'>
           <div class="row">
             <div class="col-md-6">
               <h1 class="mt-5">Você está denunciando o significado da palavra: <?=$giria['giria']?></h1>
@@ -165,7 +165,6 @@ $giria = $listaDic[0];
           }
           else{
             if (confirm("Deseja realmente enviar a denúncia?")) {
-              $("#form").attr("action","envia-denuncia.php?id=<?=$id?>");
               $('#form').submit();
             }
           }
