@@ -166,7 +166,7 @@ $giria = $listaDic[0];
               //$('#form').submit();
               $.ajax({
                 method: "POST",
-                url: "envia-denuncia.php?id=<?=$_GET['id']?>",
+                url: "<?=$base_http?>/envia-denuncia.php?id=<?=$_GET['id']?>",
                 dataType: "html",
                 data: {
                   motivo: $("#motivo").val(),
