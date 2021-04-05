@@ -163,7 +163,24 @@ $giria = $listaDic[0];
           }
           else{
             if (confirm("Deseja realmente enviar a denúncia?")) {
-              $('#form').submit();
+              //$('#form').submit();
+              $.ajax({
+                method: "POST",
+                url: "envia-denuncia.php?id=<?=$_GET['id']?>",
+                dataType: "html",
+                data: {
+                  motivo: $("#motivo").val(),
+                },
+                success : function(data){
+                  alert('Denúncia enviada com sucesso.');
+                  window.location.href='./texto-dicionario.php?id=<?=$id?>';
+
+                },
+                error : function(XMLHttpRequest, textStatus, errorThrown) {
+                  console.log(textStatus);
+                  console.log(errorThrown);
+                }
+              });
             }
           }
         });
