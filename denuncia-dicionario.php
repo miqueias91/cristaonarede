@@ -171,9 +171,8 @@ $giria = $listaDic[0];
                   motivo: $("#motivo").val(),
                 },
                 success : function(data){
-                  console.log(data)
-                 // alert('Denúncia enviada com sucesso.');
-                 // window.location.href='./texto-dicionario.php?id=<?=$id?>';
+                  alert('Denúncia enviada com sucesso.');
+                  window.location.href='./texto-dicionario.php?id=<?=$id?>';
 
                 },
                 error : function(XMLHttpRequest, textStatus, errorThrown) {

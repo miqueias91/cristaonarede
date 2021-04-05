@@ -67,7 +67,7 @@ if (!$ambiente_desenvolvimento) {
       </section>
 
       <section class="container">
-        <form method="post" id="form">
+        <form method="post" id="form"  name='form' enctype='multipart/form-data'>
         <div class="row">
           <div class="col-md-6">
             <h1 class="mt-5"><?=$giria['giria']?></h1>
@@ -162,7 +162,7 @@ if (!$ambiente_desenvolvimento) {
           }
           else{
             if (confirm("Deseja realmente enviar?")) {
-              $("#form").attr("action","envia-dicionario.php?id=<?=$id?>");
+              $("#form").attr("action","envia-dicionario?id=<?=$id?>");
               $('#form').submit();
             }
           }
