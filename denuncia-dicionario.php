@@ -1,4 +1,3 @@
-<!doctype html>
 <?php 
 include_once "config/config.php";
 include_once "$CLASS_PATH/class.Dicionario.php";
@@ -166,7 +165,7 @@ $giria = $listaDic[0];
               //$('#form').submit();
               $.ajax({
                 method: "POST",
-                url: "<?=$base_http?>envia-denuncia.php?id=<?=$_GET['id']?>",
+                url: "./envia-denuncia?id=<?=$_GET['id']?>",
                 dataType: "html",
                 data: {
                   motivo: $("#motivo").val(),
