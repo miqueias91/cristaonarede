@@ -75,7 +75,7 @@ $giria = $listaDic[0];
       </section>
 
       <section class="container">
-        <form method="post" id="form">
+        <form method="post" id="form" name='form' enctype='multipart/form-data'>
         <div class="row">
           <div class="col-md-6">
             <h1 class="mt-5"><?=$giria['giria']?></h1>
@@ -165,7 +165,7 @@ $giria = $listaDic[0];
           }
           else{
             if (confirm("Deseja realmente enviar a Sugestão?")) {
-              $("#form").attr("action","envia-sugestao.php?id=<?=$id?>");
+              $("#form").attr("action","envia-sugestao?id=<?=$id?>");
               $('#form').submit();
             }
           }

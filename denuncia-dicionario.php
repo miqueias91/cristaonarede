@@ -74,7 +74,7 @@ $giria = $listaDic[0];
       </section>
 
       <section class="container">
-        <form method="POST" id="form" action="envia-denuncia.php?id=<?=$id?>" name='form' enctype='multipart/form-data'>
+        <form method="POST" id="form" action="envia-denuncia?id=<?=$id?>" name='form' enctype='multipart/form-data'>
           <div class="row">
             <div class="col-md-6">
               <h1 class="mt-5">Você está denunciando o significado da palavra: <?=$giria['giria']?></h1>
