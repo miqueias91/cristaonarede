@@ -94,7 +94,7 @@
                   <li><a class="dropdown-item" href="./caca.php">Caça Palavras</a></li>
                   <li><a class="dropdown-item" href="./memoria.php">Jogo da Memória</a></li>
                   <li><a class="dropdown-item" href="./quiz.php">Quiz da Bíblia</a></li>
-                  <li><a class="dropdown-item" href="./dicionario.php">Dicionário de Crente</a></li>
+                  <li><a class="dropdown-item" href="./dicionario.php">Dicionário Cristão</a></li>
                 </ul>
               </li>
               <li class="nav-item">

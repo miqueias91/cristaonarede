@@ -84,9 +84,9 @@ $giria = $listaDic[0];
             <div class="col">
                 <div class="card-body text-center">
                   <br>
-                  <textarea class="form-control" name="significado" id="significado" style="height: 100px"><?=$giria['significado']?></textarea>
+                  <textarea disabled="1" class="form-control" name="significado" id="significado" style="height: 100px" placeholder="Significado..."><?=$giria['significado']?></textarea>
                   <br>
-                  <textarea class="form-control" name="exemplo" id="exemplo" style="height: 100px" placeholder="Exemplo..."><?=$giria['exemplo']?></textarea>
+                  <textarea disabled="1" class="form-control" name="exemplo" id="exemplo" style="height: 100px" placeholder="Exemplo..."><?=$giria['exemplo']?></textarea>
                   <br>
                   <button class="btn btn-outline-success enviar-sugestao" type="submit">Enviar Sugestão De Mudança</button>
                   <button class="btn btn-primary enviar-denunciar" type="submit">Denunciar</button>
@@ -159,6 +159,10 @@ $giria = $listaDic[0];
     <script>
 
       $(function() {
+        $('.enviar-sugestao').click(function(){
+          window.location.href='./sugestao-dicionario.php?id=<?=$id?>';
+        });
+
         $('.enviar-denunciar').click(function(){
           alert('Nos relate o motivo da denúncia desse significado.');
           window.location.href='./denuncia-dicionario.php?id=<?=$id?>';

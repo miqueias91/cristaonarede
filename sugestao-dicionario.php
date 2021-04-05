@@ -76,26 +76,26 @@ $giria = $listaDic[0];
 
       <section class="container">
         <form method="post" id="form">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="mt-5"><?=$giria['giria']?></h1>
+          </div>
+
           <div class="row">
-            <div class="col-md-6">
-              <h1 class="mt-5">Você está denunciando o significado da palavra: <?=$giria['giria']?></h1>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                  <div class="card-body text-center">
-                    <br>
-                    <br>
-                    <textarea class="form-control" name="motivo" id="motivo" style="height: 100px" placeholder="Nos relate o motivo da denúncia desse significado"></textarea>
-                    <br>
-                    <button class="btn btn-outline-success enviar-denuncia" type="button">Enviar Denúncia</button>
+            <div class="col">
+                <div class="card-body text-center">
+                  <br>
+                  <textarea class="form-control" name="significado" id="significado" style="height: 100px" placeholder="Significado..."><?=$giria['significado']?></textarea>
+                  <br>
+                  <textarea class="form-control" name="exemplo" id="exemplo" style="height: 100px" placeholder="Exemplo..."><?=$giria['exemplo']?></textarea>
+                  <br>
+                  <button class="btn btn-outline-success enviar-sugestao" type="submit">Enviar Sugestão</button>
                     <button class="btn btn-primary voltar-dicionario" type="button">Voltar</button>
-                  </div>
-              </div>
-            </div>
-        </form>
-          
 
+                </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="container">
@@ -159,13 +159,13 @@ $giria = $listaDic[0];
     <script>
 
       $(function() {
-        $('.enviar-denuncia').click(function(){
-          if ($("#motivo").val() == '') {
-            alert('Informe o motivo da denúncia!');
+        $('.enviar-sugestao').click(function(){
+          if ($("#significado").val() == '') {
+            alert('Informe o significado!');
           }
           else{
-            if (confirm("Deseja realmente enviar a denúncia?")) {
-              $("#form").attr("action","envia-denuncia.php?id=<?=$id?>");
+            if (confirm("Deseja realmente enviar a Sugestão?")) {
+              $("#form").attr("action","envia-sugestao.php?id=<?=$id?>");
               $('#form').submit();
             }
           }
@@ -176,7 +176,6 @@ $giria = $listaDic[0];
             window.location.href='./texto-dicionario.php?id=<?=$id?>';
           }
         });
-
       });
     </script>
 

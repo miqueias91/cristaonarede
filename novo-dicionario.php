@@ -1,7 +1,6 @@
 <!doctype html>
 <?php 
 include_once "config/config.php";
-include_once "$CLASS_PATH/class.Dicionario.php";
 include_once "$CLASS_PATH/class.System.php";
 header("Access-Control-Allow-Origin: *");
 
@@ -9,13 +8,6 @@ $sys = new System();
 if (!$ambiente_desenvolvimento) {
   $sys->registraAcesso();
 }
-
-$dc = new Dicionario();
-$id = $_GET['id'] ? $_GET['id'] : 1;
-$listaDic = $dc->buscaDicionario($id);
-$giria = $listaDic[0];
-//echo "<pre>";
-//print_r($giria);die;
 
 ?>
 <html lang="pt-br" class="h-100">
@@ -76,26 +68,28 @@ $giria = $listaDic[0];
 
       <section class="container">
         <form method="post" id="form">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="mt-5"><?=$giria['giria']?></h1>
+          </div>
+
           <div class="row">
-            <div class="col-md-6">
-              <h1 class="mt-5">Você está denunciando o significado da palavra: <?=$giria['giria']?></h1>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                  <div class="card-body text-center">
-                    <br>
-                    <br>
-                    <textarea class="form-control" name="motivo" id="motivo" style="height: 100px" placeholder="Nos relate o motivo da denúncia desse significado"></textarea>
-                    <br>
-                    <button class="btn btn-outline-success enviar-denuncia" type="button">Enviar Denúncia</button>
+            <div class="col">
+                <div class="card-body text-center">
+                  <br>
+                  <input type="text" class="form-control" name="giria" id="giria" placeholder="Palavra..."/>
+                  <br>
+                  <textarea class="form-control" name="significado" id="significado" style="height: 100px" placeholder="Significado..."></textarea>
+                  <br>
+                  <textarea class="form-control" name="exemplo" id="exemplo" style="height: 100px" placeholder="Exemplo..."></textarea>
+                  <br>
+                  <button class="btn btn-outline-success enviar-dicionario" type="submit">Enviar Palavra</button>
                     <button class="btn btn-primary voltar-dicionario" type="button">Voltar</button>
-                  </div>
-              </div>
-            </div>
-        </form>
-          
 
+                </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="container">
@@ -159,13 +153,16 @@ $giria = $listaDic[0];
     <script>
 
       $(function() {
-        $('.enviar-denuncia').click(function(){
-          if ($("#motivo").val() == '') {
-            alert('Informe o motivo da denúncia!');
+        $('.enviar-dicionario').click(function(){
+          if ($("#giria").val() == '') {
+            alert('Informe a palavra!');
+          }
+          else if ($("#significado").val() == '') {
+            alert('Informe o significado!');
           }
           else{
-            if (confirm("Deseja realmente enviar a denúncia?")) {
-              $("#form").attr("action","envia-denuncia.php?id=<?=$id?>");
+            if (confirm("Deseja realmente enviar?")) {
+              $("#form").attr("action","envia-dicionario.php?id=<?=$id?>");
               $('#form').submit();
             }
           }
@@ -173,10 +170,9 @@ $giria = $listaDic[0];
 
         $('.voltar-dicionario').click(function(){
           if (confirm("Deseja realmente voltar?")) {
-            window.location.href='./texto-dicionario.php?id=<?=$id?>';
+            window.location.href='./dicionario.php?id=<?=$id?>';
           }
         });
-
       });
     </script>
 

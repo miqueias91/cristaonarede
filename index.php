@@ -384,11 +384,11 @@ $listaDicInicio = $dc->buscaDicionarioInicio();
               foreach ($listaDicInicio as $key => $row) {
            ?>
               <div class="col-md-4">            
-                  <a title="Ver" href="./texto-dicionario.php?id=<?=$row['id_giria']?>" class="ver_significado">
+                  <a title="Clique aqui para ver mais detalhes" href="./texto-dicionario.php?id=<?=$row['id_giria']?>" class="ver_significado">
                     <p class="lead">
                         <p style="color: #072040!important"><b><?=$row['giria']?></b></p>
                         <p style="color: #072040!important;font-size: 15px!important;max-width: 30ch;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><i><?=$row['significado']?></i></p>
-                          <p style="color: #072040!important;font-size: 15px!important;max-width: 30ch;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><i>[VER MAIS]</i></p>
+                          <p style="color: #072040!important;font-size: 15px!important;max-width: 30ch;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;"><i>[MAIS DETALHES]</i></p>
 
                     </p>
                   </a>
@@ -397,6 +397,13 @@ $listaDicInicio = $dc->buscaDicionarioInicio();
               }
             }
            ?>
+        </div>
+        <div class="row" style="text-align: center;">
+            <div class="col-md-12">            
+                <a href="./dicionario.php" class="btn btn-outline-success enviar-sugestao" type="button" style="margin-right: 10px">Ver Mais
+                <a href="https://play.google.com/store/apps/details?id=com.innovatesoft.giriasdecrente" target="_BLANK" class="btn btn-primary">Baixar App <i class="fab fa-google-play"></i></a>
+
+            </div>
         </div>
       </section>
 

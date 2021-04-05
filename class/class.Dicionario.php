@@ -28,13 +28,14 @@ class Dicionario extends Conexao {
   public function buscaDicionario($id_giria = null){
     $filtro = "";
     $filtro.= $id_giria ? " AND id_giria = :id_giria " : "";
+    $order = $id_giria ? " dataregistro desc " : " letra ";
     try {
       $sql = "
       SELECT * 
       FROM giriasdecrente 
       WHERE id_giria > 0
       $filtro
-      ORDER BY dataregistro desc
+      ORDER BY $order
       ";
       $pdo = Conexao::getInstance()->prepare($sql);
       if ($id_giria) {
@@ -47,9 +48,9 @@ class Dicionario extends Conexao {
         echo "<br>".$e->getMessage();
     }
   }
-  public function registraDenunciaDicionario($idgiria, $dataregistro, $userId, $motivo) {
+  public function registraDenunciaDicionario($idgiria, $userId, $motivo) {
         try {
-           $sql = "INSERT INTO giriasdecrente (
+           $sql = "INSERT INTO giriasdecrente_denuncia (
                     idgiriasdecrente_denuncia,
                     idgiria,
                     dataregistro,
@@ -69,6 +70,75 @@ class Dicionario extends Conexao {
           $pdo->bindValue(":dataregistro", date('Y-m-d H:i:s'), PDO::PARAM_STR);
           $pdo->bindValue(":userId", $userId, PDO::PARAM_STR);
           $pdo->bindValue(":motivo", trim($motivo), PDO::PARAM_STR);
+          $pdo->execute();
+          return true; 
+        }
+        catch (Exception $e) {
+          echo $e->getMessage();
+        }
+    }
+
+    public function registraSugestaoDicionario($idgiria, $significado, $userId, $exemplo) {
+        try {
+           $sql = "INSERT INTO giriasdecrente_sugestao (
+                    idgiriasdecrente_sugestao,
+                    idgiria,
+                    significado,
+                    dataregistro,
+                    userId,
+                    exemplo                  
+                  ) 
+                  VALUES (                 
+                    :idgiriasdecrente_sugestao,
+                    :idgiria,
+                    :significado,
+                    :dataregistro,
+                    :userId,
+                    :exemplo
+                  )";
+          $pdo = Conexao::getInstance()->prepare($sql);        
+          $pdo->bindValue(':idgiriasdecrente_sugestao', NULL, PDO::PARAM_INT);
+          $pdo->bindValue(":idgiria", $idgiria, PDO::PARAM_INT);
+          $pdo->bindValue(":significado", trim($significado), PDO::PARAM_STR);
+          $pdo->bindValue(":dataregistro", date('Y-m-d H:i:s'), PDO::PARAM_STR);
+          $pdo->bindValue(":userId", $userId, PDO::PARAM_STR);
+          $pdo->bindValue(":exemplo", $exemplo, PDO::PARAM_STR);
+          $pdo->execute();
+          return true; 
+        }
+        catch (Exception $e) {
+          echo $e->getMessage();
+        }
+    }
+
+    public function registraDicionario($giria, $significado, $userId, $exemplo) {
+        try {
+           $sql = "INSERT INTO giriasdecrente (
+                    id_giria,
+                    giria,
+                    significado,
+                    dataregistro,
+                    letra,
+                    userId,
+                    exemplo                  
+                  ) 
+                  VALUES (                 
+                    :id_giria,
+                    :giria,
+                    :significado,
+                    :dataregistro,
+                    :letra,
+                    :userId,
+                    :exemplo
+                  )";
+          $pdo = Conexao::getInstance()->prepare($sql);        
+          $pdo->bindValue(':id_giria', NULL, PDO::PARAM_INT);
+          $pdo->bindValue(":giria", trim($giria), PDO::PARAM_STR);
+          $pdo->bindValue(":significado", trim($significado), PDO::PARAM_STR);
+          $pdo->bindValue(":dataregistro", date('Y-m-d H:i:s'), PDO::PARAM_STR);
+          $pdo->bindValue(":letra", strtoupper(trim($giria[0])), PDO::PARAM_STR);
+          $pdo->bindValue(":userId", $userId, PDO::PARAM_STR);
+          $pdo->bindValue(":exemplo", $exemplo, PDO::PARAM_STR);
           $pdo->execute();
           return true; 
         }

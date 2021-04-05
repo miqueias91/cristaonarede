@@ -11,11 +11,8 @@ if (!$ambiente_desenvolvimento) {
 }
 
 $dc = new Dicionario();
-$id = $_GET['id'] ? $_GET['id'] : 1;
-$listaDic = $dc->buscaDicionario($id);
-$giria = $listaDic[0];
-//echo "<pre>";
-//print_r($giria);die;
+$listaDic = $dc->buscaDicionario();
+// echo "<pre>";print_r($listaDic);die;
 
 ?>
 <html lang="pt-br" class="h-100">
@@ -52,8 +49,6 @@ $giria = $listaDic[0];
       }
     </style>
 
-    
-    <!-- Custom styles for this template -->
   </head>
   <body class="d-flex flex-column h-100">
     <?php include_once './header.php'; ?>
@@ -75,31 +70,45 @@ $giria = $listaDic[0];
       </section>
 
       <section class="container">
-        <form method="post" id="form">
+        <div class="row">
+          <div class="col-md-6">
+            <h1 class="mt-5">Dicionário Cristão</h1>
+          </div>
+        </div>
+          <?php 
+            if ($listaDic) {
+              $letra_anterior = '';
+              foreach ($listaDic as $key => $row) {
+
+           if ($letra_anterior != $row['letra']) {
+              $letra_anterior = $row['letra']
+           ?>
           <div class="row">
             <div class="col-md-6">
-              <h1 class="mt-5">Você está denunciando o significado da palavra: <?=$giria['giria']?></h1>
+              <h2 class="mt-5"><?=$row['letra']?></h2>
             </div>
-
-            <div class="row">
-              <div class="col">
-                  <div class="card-body text-center">
-                    <br>
-                    <br>
-                    <textarea class="form-control" name="motivo" id="motivo" style="height: 100px" placeholder="Nos relate o motivo da denúncia desse significado"></textarea>
-                    <br>
-                    <button class="btn btn-outline-success enviar-denuncia" type="button">Enviar Denúncia</button>
-                    <button class="btn btn-primary voltar-dicionario" type="button">Voltar</button>
-                  </div>
-              </div>
+          </div>
+        <?php } ?>
+          <div class="row card">
+            <div class="col-md-12 card-body">
+              <a class="dropdown-item" href="./texto-dicionario.php?id=<?=$row['id_giria']?>"><?=$row['giria']?>
+              <span style="float:right"><i class="fas fa-external-link-alt"></i></span></a>
             </div>
-        </form>
-          
-
+          </div>
+          <?php 
+              }
+            }
+           ?>
+          <div class="row" style="text-align: center;margin-top: 20px">
+            <div class="col-md-12">
+              <a href="./novo-dicionario.php" class="btn btn-outline-success enviar-sugestao" type="button">Enviar Palavra</a>
+            </div>
+          </div>
       </section>
 
       <section class="container">
         <h1 class="mt-5">Recomendados para você</h1>
+
           <iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=BR&source=ac&ref=tf_til&ad_type=product_link&tracking_id=miqueias91-20&marketplace=amazon&amp;region=BR&placement=8581581889&asins=8581581889&linkId=00f507e36a7926ec53dbbff4851d0d3f&show_border=false&link_opens_in_new_window=false&price_color=333333&title_color=0066c0&bg_color=ffffff">
           </iframe>
 
@@ -153,30 +162,14 @@ $giria = $listaDic[0];
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+    <script src="./js/firebasejs.js"></script>
+    <script src="./js/onesignal.js"></script>
     <script src="js/publicidade.js"></script>
-    <script src="./js/jquery.mask.min.js"></script>
 
     <script>
-
       $(function() {
-        $('.enviar-denuncia').click(function(){
-          if ($("#motivo").val() == '') {
-            alert('Informe o motivo da denúncia!');
-          }
-          else{
-            if (confirm("Deseja realmente enviar a denúncia?")) {
-              $("#form").attr("action","envia-denuncia.php?id=<?=$id?>");
-              $('#form').submit();
-            }
-          }
-        });
 
-        $('.voltar-dicionario').click(function(){
-          if (confirm("Deseja realmente voltar?")) {
-            window.location.href='./texto-dicionario.php?id=<?=$id?>';
-          }
-        });
-
+  
       });
     </script>
 
