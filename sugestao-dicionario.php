@@ -84,6 +84,8 @@ $giria = $listaDic[0];
           <div class="row">
             <div class="col">
                 <div class="card-body text-center">
+                  <input type="hidden" name="userId" id="userId">
+                  <input type="hidden" name="uid" id="uid">
                   <br>
                   <textarea class="form-control" name="significado" id="significado" style="height: 100px" placeholder="Significado..."><?=$giria['significado']?></textarea>
                   <br>
@@ -159,6 +161,9 @@ $giria = $listaDic[0];
     <script>
 
       $(function() {
+        $("#userId").val(window.localStorage.getItem('userId'));
+        $("#uid").val(window.localStorage.getItem('uid'));        
+
         $('.enviar-sugestao').click(function(){
           if ($("#significado").val() == '') {
             alert('Informe o significado!');

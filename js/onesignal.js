@@ -5,7 +5,10 @@ OneSignal.push(function() {
 
 	    var userId = window.localStorage.getItem('userId');
 	    var uid = window.localStorage.getItem('uid');
-	    
+
+      $("#userId").val(window.localStorage.getItem('userId'));
+      $("#uid").val(window.localStorage.getItem('uid'));
+
 	    if (userId && uid) {
 	      $.ajax({
 	        url: "https://www.innovatesoft.com.br/webservice/app/cadastraUser.php",

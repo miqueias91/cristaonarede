@@ -83,6 +83,8 @@ $giria = $listaDic[0];
             <div class="row">
               <div class="col">
                   <div class="card-body text-center">
+                    <input type="hidden" name="userId" id="userId">
+                    <input type="hidden" name="uid" id="uid">
                     <br>
                     <br>
                     <textarea class="form-control" name="motivo" id="motivo" style="height: 100px" placeholder="Nos relate o motivo da denúncia desse significado"></textarea>
@@ -156,6 +158,9 @@ $giria = $listaDic[0];
     <script>
 
       $(function() {
+        $("#userId").val(window.localStorage.getItem('userId'));
+        $("#uid").val(window.localStorage.getItem('uid'));
+
         $('.enviar-denuncia').click(function(){
           if ($("#motivo").val() == '') {
             alert('Informe o motivo da denúncia!');
@@ -169,6 +174,8 @@ $giria = $listaDic[0];
                 dataType: "html",
                 data: {
                   motivo: $("#motivo").val(),
+                  userId: window.localStorage.getItem('userId'),
+                  uid: window.localStorage.getItem('uid'),
                 },
                 success : function(data){
                   alert('Denúncia enviada com sucesso.');

@@ -76,6 +76,8 @@ if (!$ambiente_desenvolvimento) {
           <div class="row">
             <div class="col">
                 <div class="card-body text-center">
+                  <input type="hidden" name="userId" id="userId">
+                  <input type="hidden" name="uid" id="uid">
                   <br>
                   <input type="text" class="form-control" name="giria" id="giria" placeholder="Palavra..."/>
                   <br>
@@ -153,6 +155,9 @@ if (!$ambiente_desenvolvimento) {
     <script>
 
       $(function() {
+        $("#userId").val(window.localStorage.getItem('userId'));
+        $("#uid").val(window.localStorage.getItem('uid'));       
+        
         $('.enviar-dicionario').click(function(){
           if ($("#giria").val() == '') {
             alert('Informe a palavra!');
