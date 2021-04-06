@@ -129,6 +129,11 @@ $listaDicInicio = $dc->buscaDicionarioInicio();
             </div>
             <div class="col-md-6" style="text-align: right;">
               <button class="btn btn-outline-success nova-palavra-dia" type="button">Nova Palavra <i class="fas fa-redo-alt"></i></button>
+              <a
+                id="link_mensagem"
+                target='_BLANK'
+                href='https://api.whatsapp.com/send?text=<?= $mensagem[text].' '.$mensagem['name'].' '.$mensagem['chapter'].':'.$mensagem['verse'];?>
+                https://cristaonarede.com.br/' class="btn btn-primary">Enviar Whatsapp <i class="fab fa-whatsapp"></i></a>
             </div>
           </div>
         </div>
@@ -382,6 +387,8 @@ $listaDicInicio = $dc->buscaDicionarioInicio();
             success : function(data){
               $("#mensagem_texto").html(data['text'])
               $("#mensagem_versiculo").html(data['name']+' '+data['chapter']+':'+data['verse']);
+
+              $("#link_mensagem").attr('href','https://api.whatsapp.com/send?text='+data['text']+' '+data['name']+' '+data['chapter']+':'+data['verse']+'                                            https://cristaonarede.com.br/');
               $("#div_carregando").hide();
               $("#div_palavra_dia").show();
             },
