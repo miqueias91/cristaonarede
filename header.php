@@ -108,7 +108,7 @@
                 <a class="nav-link" href="./contato.php">Contato</a>
               </li>
 	           	<li class="nav-item">
-	                <a class="nav-link" target="_BLANK" href="./doe.php">DOE AGORA</a>
+	                <a class="nav-link" href="./doe.php">DOE AGORA</a>
 	            </li>
 
 
